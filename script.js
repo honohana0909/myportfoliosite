@@ -1,117 +1,72 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
-    // LottieWeb は lottie-player.js が読み込まれるとグローバルに利用可能になります
-    const LottieWeb = window.LottieWeb;
+    // サイドバーに設置したLottieプレイヤー要素を取得
+    const sidebarLottiePlayer = document.querySelector('.sidebar-nav lottie-player');
 
-    if (!LottieWeb) {
-        console.error('LottieWeb library not loaded. Make sure lottie-player.js is correctly linked.');
-        return;
-    }
+    // メインコンテンツの各セクション要素を取得
+    const mainSections = document.querySelectorAll('main .section, header#top');
 
-    // --- 1. スクロール連動アニメーション ---
-    const scrollLottieContainer = document.getElementById('scroll-lottie-animation');
-    const scrollLottiePath = 'json/scroll_back.json'; // ★ここにスクロール連動用JSONのパスを指定
-    
-    if (scrollLottieContainer) {
-        const scrollAnim = LottieWeb.loadAnimation({
-            container: scrollLottieContainer,
-            renderer: 'svg',
-            loop: false, // スクロールに合わせて制御するためループはfalse
-            autoplay: false, // 自動再生もfalse
-            path: scrollLottiePath
-        });
+    // 各セクションIDと、対応するLottie JSONファイルのパスをマッピング
+    // ★ここを、about_me以降全て json/back.json に変更しました！★
+    const sectionLottieMap = {
+        'top': 'json/back.json',         // トップセクション用のLottie
+        'about_me': 'json/back.json',    // About meセクションも back.json
+        'skill': 'json/back.json',       // Skillセクションも back.json
+        'works': 'json/back.json',       // Worksセクションも back.json
+        'contact_info': 'json/back.json' // Contactセクションも back.json
+    };
 
-        // アニメーションが読み込まれたら総フレーム数を取得
-        scrollAnim.addEventListener('DOMLoaded', () => {
-            const totalFrames = scrollAnim.totalFrames;
-            console.log('Scroll Animation Loaded. Total Frames:', totalFrames);
+    // Intersection Observer のオプション設定
+    const observerOptions = {
+        root: null,      // nullはビューポート（ブラウザの表示領域）を監視の基準とする
+        rootMargin: '0px', // ルートのマージン
+        threshold: 0.5   // 監視対象要素がビューポートの50%以上見えたらコールバックを発火
+    };
 
-            const scrollSection = document.getElementById('scroll-lottie-section');
-            // スクロール可能な範囲を適切に設定するため、セクションの高さを取得
-            // スクロールアニメーションの開始位置と終了位置を調整することで、よりスムーズな体験が可能
-            const sectionOffsetTop = scrollSection.offsetTop;
-            const sectionHeight = scrollSection.offsetHeight; 
-            const windowHeight = window.innerHeight;
+    // Intersection Observer のインスタンスを作成
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { // ターゲット要素がビューポートに入った場合
+                const sectionId = entry.target.id; // 現在表示されているセクションのID
+                const newLottieSrc = sectionLottieMap[sectionId]; // 対応するLottie JSONのパス
 
-            // スクロールイベントリスナー
-            window.addEventListener('scroll', () => {
-                // スクロール位置
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                // セクションがビューポートに入り始めてから終わりまでのスクロール割合を計算
-                // 例: セクションが画面下端から入り始めて、画面上端で抜けるまでの割合
-                // アニメーションを再生させたいスクロール範囲を調整してください
-                const scrollableDistance = sectionHeight + windowHeight; // セクションの高さ + ウィンドウの高さ
-                const scrolledIntoSection = scrollTop + windowHeight - sectionOffsetTop;
-                
-                let scrollProgress = 0;
-                if (scrollableDistance > 0) { // ゼロ除算防止
-                    scrollProgress = Math.min(1, Math.max(0, scrolledIntoSection / scrollableDistance));
+                // 現在のLottieアニメーションのパスと異なる場合のみ更新
+                if (sidebarLottiePlayer && sidebarLottiePlayer.src !== newLottieSrc) {
+                    sidebarLottiePlayer.load(newLottieSrc); // 新しいLottie JSONをロード
+                    sidebarLottiePlayer.speed = 1;         // 速度をリセット（必要であれば）
+                    sidebarLottiePlayer.play();            // アニメーションを再生
                 }
 
-                // プログレスに基づいてフレームを計算
-                const frame = Math.floor(totalFrames * scrollProgress);
-                scrollAnim.goToAndStop(frame, true); // 指定フレームに移動して停止
-            });
-
-            // ページロード時にも一度表示位置を更新
-            window.dispatchEvent(new Event('scroll'));
-        });
-    }
-
-
-    // --- 2. Aboutセクション到達時のBack to Topアニメーション ---
-    const aboutMeSection = document.getElementById('about_me');
-    const backToTopContainer = document.getElementById('back-to-top-animation');
-    const backToTopButton = document.getElementById('back-to-top-button');
-    const backToTopLottiePath = 'json/back.json'; // ★ここにBack to Top用JSONのパスを指定
-
-    if (aboutMeSection && backToTopContainer) {
-        const backToTopAnim = LottieWeb.loadAnimation({
-            container: backToTopContainer,
-            renderer: 'svg',
-            loop: false,
-            autoplay: false,
-            path: backToTopLottiePath
-        });
-
-        let isAnimVisible = false; // アニメーションが表示中かどうかのフラグ
-
-        // アニメーションがロードされたら、Back to Topアニメーションを再生準備
-        backToTopAnim.addEventListener('DOMLoaded', () => {
-            // スクロールイベントでAboutセクションの表示を監視
-            window.addEventListener('scroll', () => {
-                const rect = aboutMeSection.getBoundingClientRect();
-                // Aboutセクションがビューポート内に入ったら (例: 上端が画面の75%より上、下端が画面の25%より下)
-                const isAboutMeInView = (rect.top <= window.innerHeight * 0.75) && (rect.bottom >= window.innerHeight * 0.25);
-
-                if (isAboutMeInView && !isAnimVisible) {
-                    // 初めてセクションに入ったらアニメーションを再生し、ボタンを表示
-                    backToTopAnim.playSegments([0, backToTopAnim.totalFrames], true); // 全フレーム再生
-                    backToTopButton.style.display = 'block'; // ボタンを表示
-                    isAnimVisible = true;
-                } else if (!isAboutMeInView && isAnimVisible) {
-                    // セクションから出たらアニメーションを停止し、ボタンを非表示
-                    backToTopAnim.stop(); // 最初のフレームに戻す
-                    backToTopButton.style.display = 'none';
-                    isAnimVisible = false;
+                // サイドバーナビゲーションのハイライトを更新
+                document.querySelectorAll('.sidebar-nav ul li a').forEach(link => {
+                    link.classList.remove('current'); // すべての'current'クラスを削除
+                });
+                const currentNavLink = document.querySelector(`.sidebar-nav ul li a[href="#${sectionId}"]`);
+                if (currentNavLink) {
+                    currentNavLink.classList.add('current'); // 現在のセクションに対応するリンクに'current'クラスを追加
                 }
-            });
-
-            // ページロード時にも一度表示位置を更新
-            window.dispatchEvent(new Event('scroll')); // 画面が読み込まれたときに一度チェック
+            }
         });
+    }, observerOptions);
 
+    // 各セクションを監視対象に追加
+    mainSections.forEach(section => {
+        observer.observe(section);
+    });
 
-        // Back to Topボタンのクリックイベント
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // スムーズスクロール
-            });
-            // アニメーションを停止し非表示にする
-            backToTopAnim.stop();
-            backToTopButton.style.display = 'none';
-            isAnimVisible = false;
-        });
+    // ★ 初期ロード時の処理 ★
+    // ページ読み込み時に、URLのハッシュ（#topなど）に基づいてLottieとナビハイライトを設定
+    // または、デフォルトでTopセクションをアクティブにする
+    const initialSectionId = window.location.hash ? window.location.hash.substring(1) : 'top';
+    const initialLottieSrc = sectionLottieMap[initialSectionId];
+
+    if (sidebarLottiePlayer && initialLottieSrc && sidebarLottiePlayer.src !== initialLottieSrc) {
+        sidebarLottiePlayer.load(initialLottieSrc);
+        sidebarLottiePlayer.play();
     }
-});// JavaScript Document
+    const initialNavLink = document.querySelector(`.sidebar-nav ul li a[href="#${initialSectionId}"]`);
+    if (initialNavLink) {
+        initialNavLink.classList.add('current');
+    }
+});
