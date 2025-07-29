@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+/* --- 基本的なリセットと全体設定 --- */
+body {
+    margin: 0;
+    padding: 0; /* paddingをリセット */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333; /* デフォルトの文字色 */
+    background-color: #f4f4f4; /* ページ全体の背景色 */
+}
+
+/* --- ヘッダーセクション --- */
+header {
+    max-width: 1200px;
+    height: 450px; /* 高さを指定 */
+    background-image: url(sozai/ui/header.png); /* 画像パス確認 */
+    background-repeat: no-repeat; /* 変更: 繰り返しなし */
+    background-size: cover; /* 変更: 要素全体をカバーするように拡大縮小 */
+    background-position: center center; /* 変更: 画像を中央に配置 */
+    /* ナビゲーションの幅の分だけ左にずらす */
+    margin-left: 80px; /* sidebar-navの幅に合わせる */
+    display: flex; /* コンテンツを中央寄せするため */
+    align-items: center; /* 垂直方向中央寄せ */
+    justify-content: center; /* 水平方向中央寄せ */
+    box-sizing: border-box; /* paddingを幅に含める */
+    padding: 20px; /* 全体の内側の余白 */
+    position: relative; /* z-indexのため */
+    z-index: 1; /* ナビゲーションより奥に表示 */
+}
+
+.headmain {
+    text-align: left; /* 子要素のテキストやインライン要素を中央寄せ */
+    max-width: 960px; /* コンテンツの最大幅を制限 */
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0; /* 中央寄せ */
+    color: #fff; /* ヘッダー内の文字色を白に（背景画像の色による） */
+}
+
+.headmain h3 {
+    font-size: 2.5em;
+    margin-left: 55px;
+    color: #555555;
+}
+
+#honokamaekawa {
+    /* Lottie-playerの親要素のスタイル調整 */
+    display: flex;
+    justify-content: center; /* Lottieを中央揃え */
+    align-items: center;
+    margin-top: -50px;    /* Lottieのサイズはlottie-playerタグのstyle属性で指定済み */
+}
+
+/* --- 左固定ナビゲーションバー --- */
+.sidebar-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.2); /* 黒に近い色で透明度20% */
+    color: white;
+    padding: 20px 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 1000; /* 最前面に表示 */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px); /* 背景のコンテンツをぼかす */
+    -webkit-backdrop-filter: blur(5px); /* Safari対応 */
+}
+
+.sidebar-nav .nav-header {
+    text-align: center;
+    padding: 10px 0 20px;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #fff; /* 文字色を白に統一 */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover {
+    background-color: rgba(87, 87, 87, 0.4); /* ホバー時の背景色も透過させる */
+}
+
+/* nav-footerはHTMLにないので一旦コメントアウト */
+/* .sidebar-nav .nav-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.7em;
+    color: #bbb;
+} */
+
+/* --- メインコンテンツ領域 --- */
+main {
+    margin-left: 80px; /* ナビゲーションの幅と同じ余白 */
+    padding: 20px; /* メインコンテンツの内側の余白 */
+    line-height: 1.6;
+    box-sizing: border-box; /* paddingを幅に含める */
+    max-width: 960px; /* メインコンテンツの最大幅を制限 */
+    margin-right: auto; /* 左マージンが指定されているので右をautoにして中央寄せの補助 */
+    margin-top: 0; /* bodyのpaddingがないので不要 */
+    margin-bottom: 0; /* bodyのpaddingがないので不要 */
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    padding: 60px 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    min-height: 300px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #FFF2DB;
+    color: white;
+    margin-left: 80px; /* ナビゲーションの幅の分ずらす */
+    box-sizing: border-box; /* paddingを幅に含める */
+    background-image: url(sozai/ui/fotter.png);
+}
+#top img {
+    height: 400px;
+    float: left;
+}
