@@ -8,6 +8,7 @@ body {
     line-height: 1.6;
     color: #333; /* デフォルトの文字色 */
     background-color: #f4f4f4; /* ページ全体の背景色 */
+    background-image: url(sozai/ui/bkgd.png);
 }
 
 /* --- ヘッダーセクション --- */
@@ -140,8 +141,7 @@ main {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #FFF2DB;
-    color: white;
+    color: ＃555555;
     margin-left: 80px; /* ナビゲーションの幅の分ずらす */
     box-sizing: border-box; /* paddingを幅に含める */
     background-image: url(sozai/ui/fotter.png);
