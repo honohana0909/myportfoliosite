@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 各セクションIDと、対応するLottie JSONファイルのパスをマッピング
     // ★ここを、about_me以降全て json/back.json に変更しました！★
     const sectionLottieMap = {
-        'top': 'json/back.json',         // トップセクション用のLottie
+        'top': 'json/scroll_back.json',         // トップセクション用のLottie
         'about_me': 'json/back.json',    // About meセクションも back.json
         'skill': 'json/back.json',       // Skillセクションも back.json
         'works': 'json/back.json',       // Worksセクションも back.json
