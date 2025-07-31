@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lottieアニメーションをロードするコンテナ要素を取得
     const honokamaekawaLottieContainer = document.getElementById('honokamaekawa');
     const sidebarLottieContainer = document.getElementById('scroll_down');
+	const folowerLottieContainer = document.getElementById('flower');
 
     let currentSidebarLottieInstance = null; // サイドバーのLottieインスタンスを保持
 
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const LOTTIE_PATH_DATA = 'json/data.json'; // Honoka Maekawa タイトルアニメーション用
     const LOTTIE_PATH_SCROLL_BACK = 'json/scroll_back.json'; // スクロール前（初期状態）のサイドバーLottie
     const LOTTIE_PATH_BACK = 'json/back.json'; // スクロール後（about_me以降）のサイドバーLottie
+	const LOTTIE_PATH_FLOWER = 'json/flower.json';
 
     // 各セクションIDと、サイドバーLottieのJSONファイルのパスをマッピング
     const sectionLottieMap = {
@@ -51,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             console.warn(`Sidebar Lottie not loaded. Container: ${sidebarLottieContainer ? 'exists' : 'null'}, Path: ${jsonPath}`); // デバッグ用警告
         }
+		
+		
     }
 
     // --- ページ初期ロード時のLottie設定 ---
@@ -67,6 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Main title Lottie loaded and playing.');
     } else {
         console.warn('Main title Lottie container (#honokamaekawa) not found.');
+    }
+	
+	if (flowerLottieContainer) {
+        lottie.loadAnimation({
+            container: flowerLottieContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: LOTTIE_PATH_FLOWER // Honoka Maekawa タイトルアニメーションのJSONファイルパス
+        });
+        console.log('Main title Lottie loaded and playing.');
+    } else {
+        console.warn('Main title Lottie container (#flower) not found.');
     }
     
     // 2. サイドバーのLottieの初期設定

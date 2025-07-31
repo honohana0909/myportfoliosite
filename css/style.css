@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 :root {
-    sidebar-width: 80px; /* ナビゲーションの実際の幅に合わせる */
+    sidebar-width: 15%; /* ナビゲーションの実際の幅に合わせる */
     main-content-max-width: 960px; /* メインコンテンツの理想的な最大幅 */
     content-inner-padding: 50px; /* メインコンテンツ内の左右パディング (レイアウト画像参照) */
     guide-line-color: #E8E0D7; /* ガイドラインの色（淡い線） */
@@ -10,15 +10,15 @@
     section-bg-color: #fff; /* 各セクションの背景色 */
     shadow-color: rgba(0,0,0,0.1); /* 影の色 */
     max-width: none;
+    border-top-color: #555555;
+    border-top-style: solid;
 }
 /* --- 基本的なリセットと全体設定 --- */
 body {
     margin: 0;
     padding: 0; /* paddingをリセット */
-    line-height: 1.6;
     color: #555; /* デフォルトの文字色 */
-    background-color: #f4f4f4; /* ページ全体の背景色 */
-    background-image: url(../sozai/ui/bkgd.png);
+    background-color: #f8f4e6; /* ページ全体の背景色 */
     background-repeat: repeat;
     background-size: 100% 100%;
 }
@@ -27,12 +27,12 @@ body {
 header {
     max-width: var;
     height: 600px; /* 高さを指定 */
-    background-image: url(../sozai/ui/header.png); /* 画像パス確認 */
+   /* background-image: url(../sozai/ui/header.png); /* 画像パス確認 */
     background-repeat: no-repeat; /* 変更: 繰り返しなし */
     background-size: cover; /* 変更: 要素全体をカバーするように拡大縮小 */
     background-position: center center; /* 変更: 画像を中央に配置 */
     /* ナビゲーションの幅の分だけ左にずらす */
-    margin-left: 80px; /* sidebar-navの幅に合わせる */
+    margin-left: 15%; /* sidebar-navの幅に合わせる */
     display: flex; /* コンテンツを中央寄せするため */
     align-items: center; /* 垂直方向中央寄せ */
     justify-content: center; /* 水平方向中央寄せ */
@@ -70,7 +70,7 @@ header {
     position: fixed;
     left: 0;
     top: 0;
-    width: 80px;
+    width: 15%;
     height: 100%;
     background-color: rgba(51, 51, 51, 0.2); /* 黒に近い色で透明度20% */
     color: white;
@@ -87,7 +87,7 @@ header {
     text-align: center;
     padding: 10px 0 20px;
     font-size: 1.0em;
-    font-weight: bold;
+    font-weight: bolder;
     color: #fff; /* 文字色を白に統一 */
 }
 
@@ -95,6 +95,7 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
+    font-size: x-large;
 }
 
 .sidebar-nav ul li a {
@@ -122,9 +123,8 @@ header {
 
 /* --- メインコンテンツ領域 --- */
 main {
-    margin-left: 80px; /* ナビゲーションの幅と同じ余白 */
+    margin-left: 15%; /* ナビゲーションの幅と同じ余白 */
     padding: 20px; /* メインコンテンツの内側の余白 */
-    line-height: 1.6;
     box-sizing: border-box; /* paddingを幅に含める */
     max-width: auto; /* メインコンテンツの最大幅を制限 */
     margin-right: 0px; /* 左マージンが指定されているので右をautoにして中央寄せの補助 */
@@ -140,16 +140,22 @@ main {
     padding-left: 20px;
     padding-bottom: 20px;
     margin-bottom: 30px;
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     font-size: 1.8em;
-    font-weight: bold;
+    font-weight: normal;
     color: #555;
-    text-align: center;
+    text-align: left;
     min-height: 300px;
     margin-right: auto;
     margin-left: auto;
+}
+h1 {
+    margin-bottom: -30px;
+}
+h6 {
+    border-top: thin solid #555555;
+    text-align: right;
 }
 
 /* --- フッター --- */
@@ -157,13 +163,16 @@ footer {
     text-align: center;
     padding: 20px;
     color: ＃555555;
-    margin-left: 80px; /* ナビゲーションの幅の分ずらす */
+    margin-left: 15%; /* ナビゲーションの幅の分ずらす */
     box-sizing: border-box; /* paddingを幅に含める */
     background-image: url(../sozai/ui/fotter.png);
 }
 #top img {
-    height: 400px;
+    height: 450px;
     float: left;
+}
+.txt {
+    line-height: normal;
 }
 #about_me div {
     font-size: x-large;
@@ -177,4 +186,6 @@ footer {
 }
 #honokamaekawa {
     height: 400px;
+}
+.section_title {
 }
