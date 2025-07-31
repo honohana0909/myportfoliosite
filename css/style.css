@@ -266,14 +266,14 @@ footer {
     border-width: thin;
     border-radius: 10px;
     padding-top: 5px;
-    padding-right: 5px;
+    padding-right: 10px;
     padding-bottom: 5px;
     border-style: solid;
-    font-size: 0.3em;
+    font-size: 0.4em;
     height: 1.5em;
     text-align: center;
     width: auto;
-    padding-left: 5px;
+    padding-left: 10px;
     margin-right: 10px;
 }
 .hushtag {
