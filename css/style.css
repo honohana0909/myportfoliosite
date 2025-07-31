@@ -1,10 +1,20 @@
 @charset "UTF-8";
 
+:root {
+    sidebar-width: 80px; /* ナビゲーションの実際の幅に合わせる */
+    main-content-max-width: 960px; /* メインコンテンツの理想的な最大幅 */
+    content-inner-padding: 50px; /* メインコンテンツ内の左右パディング (レイアウト画像参照) */
+    guide-line-color: #E8E0D7; /* ガイドラインの色（淡い線） */
+    text-color-dark: #555; /* 基本の濃い文字色 */
+    text-color-light: #fff; /* 明るい文字色 */
+    section-bg-color: #fff; /* 各セクションの背景色 */
+    shadow-color: rgba(0,0,0,0.1); /* 影の色 */
+    max-width: none;
+}
 /* --- 基本的なリセットと全体設定 --- */
 body {
     margin: 0;
     padding: 0; /* paddingをリセット */
-    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #555; /* デフォルトの文字色 */
     background-color: #f4f4f4; /* ページ全体の背景色 */
@@ -15,8 +25,8 @@ body {
 
 /* --- ヘッダーセクション --- */
 header {
-    max-width: 1200px;
-    height: 450px; /* 高さを指定 */
+    max-width: var;
+    height: 600px; /* 高さを指定 */
     background-image: url(../sozai/ui/header.png); /* 画像パス確認 */
     background-repeat: no-repeat; /* 変更: 繰り返しなし */
     background-size: cover; /* 変更: 要素全体をカバーするように拡大縮小 */
@@ -116,8 +126,8 @@ main {
     padding: 20px; /* メインコンテンツの内側の余白 */
     line-height: 1.6;
     box-sizing: border-box; /* paddingを幅に含める */
-    max-width: 960px; /* メインコンテンツの最大幅を制限 */
-    margin-right: auto; /* 左マージンが指定されているので右をautoにして中央寄せの補助 */
+    max-width: auto; /* メインコンテンツの最大幅を制限 */
+    margin-right: 0px; /* 左マージンが指定されているので右をautoにして中央寄せの補助 */
     margin-top: 0; /* bodyのpaddingがないので不要 */
     margin-bottom: 0; /* bodyのpaddingがないので不要 */
     position: relative;
@@ -125,14 +135,17 @@ main {
 }
 
 .section {
-    padding: 60px 20px;
+    padding-top: 3px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
     margin-bottom: 30px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     font-size: 1.8em;
     font-weight: bold;
-    color: #666;
+    color: #555;
     text-align: center;
     min-height: 300px;
     margin-right: auto;
@@ -151,4 +164,17 @@ footer {
 #top img {
     height: 400px;
     float: left;
+}
+#about_me div {
+    font-size: x-large;
+}
+#scroll_down {
+    width: 50px;
+    padding-right: auto;
+    padding-left: 15px;
+    position: fixed;
+    bottom: 0px;
+}
+#honokamaekawa {
+    height: 400px;
 }
