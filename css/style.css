@@ -173,6 +173,7 @@ footer {
 }
 .txt {
     line-height: normal;
+    font-size: medium;
 }
 #about_me div {
     font-size: x-large;
@@ -188,4 +189,113 @@ footer {
     height: 400px;
 }
 .section_title {
+}
+#splash-logo #flower {
+    height: 50%;
+}
+
+.works-grid {
+    display: grid; /* グリッドコンテナにする */
+    /* 繰り返し可能な列を定義: 最小300px、最大1fr（利用可能なスペースを均等に） */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* グリッドアイテム間の間隔 */
+    margin-top: 40px; /* セクションタイトルとの間隔 */
+}
+
+.work-item {
+    background-color: var(--section-bg-color); /* 白い背景 */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color); /* やや強い影でカード感を出す */
+    padding: 25px; /* カードの内側の余白 */
+    text-align: center; /* テキストを中央寄せ */
+    text-decoration: none; /* リンクの下線を消す */
+    color: var(--text-dark-gray); /* 文字色 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
+    display: flex; /* 内部の要素（アイコン、タイトル、説明）を縦に並べる */
+    flex-direction: column;
+    align-items: center; /* 内部要素を水平中央寄せ */
+    min-height: 250px; /* 最小高さを設定し、均等感を出す */
+    justify-content: space-between; /* 要素を上下に配置 */
+}
+
+.work-item:hover {
+    transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* 影を濃くする */
+}
+
+.work-thumbnail-placeholder {
+    width: 300px; /* アイコンのコンテナサイズ */
+    height: 300px;
+    background-color: #F0EADB; /* 背景のベージュと合わせた色 */
+    border-radius: 50%; /* 円形にする場合 */
+    margin-bottom: 20px; /* アイコンとタイトルの間隔 */
+    display: flex; /* アイコン画像を中央に配置 */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 画像がはみ出さないように */
+}
+.work-thumbnail-placeholder.Tshirt img {
+    max-width: 80%;
+    max-height: none;
+}
+.work-thumbnail-placeholder.poster img {
+    max-width: 55%;
+    max-height: none;
+}
+.work-thumbnail-placeholder.ku img {
+    max-width: 65%;
+}
+
+.work-thumbnail-placeholder img {
+    max-width: 90%; /* アイコン画像のサイズ */
+    max-height: 90%;
+    display: block; /* 余白をなくす */
+}
+
+.work-title {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: var(--text-dark-gray);
+    margin-bottom: 10px;
+    border-top: thin solid #555555;
+    border-bottom: thin solid #555555;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tag {
+    border-width: thin;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    border-style: solid;
+    font-size: 0.3em;
+    height: 1.5em;
+    text-align: center;
+    width: auto;
+    padding-left: 5px;
+    margin-right: 10px;
+}
+.hushtag {
+    clear: none;
+    float: none;
+    display: flex;
+}
+
+.work-description {
+    font-size: 0.5em;
+    color: #777;
+    margin-bottom: 15px;
+    flex-grow: 1; /* 説明文が複数行になってもレイアウトが崩れにくいように */
+}
+.date {
+    margin-left: 0px;
+    float: none;
+    clear: none;
+    font-size: small;
+    margin-bottom: 0px;
+}
+.tag.fill {
+    background-color: #555555;
+    color: #F9F6E8;
 }
