@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         console.log('Main title Lottie loaded and playing.');
     } else {
-        console.warn('Main title Lottie container (#flower) not found.');
+        console.warn('Main title Lottie container (.flower) not found.');
     }
     
     // 2. サイドバーのLottieの初期設定
