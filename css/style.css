@@ -277,11 +277,12 @@ footer {
     margin-right: 10px;
     -webkit-box-shadow: 3px 5px #555555;
     box-shadow: 3px 5px #555555;
+    float: none;
 }
 .hushtag {
     clear: none;
     float: none;
-    display: flex;
+    display: block;
 }
 
 .work-description {
@@ -300,4 +301,5 @@ footer {
 .tag.fill {
     background-color: #555555;
     color: #F9F6E8;
+    float: none;
 }

@@ -307,3 +307,20 @@ opacity:0;
 .modaal-video .modaal-inner-wrapper{
 	padding:0;
 }
+
+.modaal-container {
+    max-width: 80vw;   /* ビューポートの幅の90%が最大 */
+    max-height: 80vh;  /* ビューポートの高さの90%が最大 */   /* 高さを自動調整 */
+    display: block;    /* 余計な余白を防ぐ */
+    margin: auto;      /* 中央揃え */
+	background-color: #F0EADB; /* 背景のベージュと合わせた色 */
+}
+
+.modaal-gallery-item img{
+	max-width: 80vw;   /* ビューポートの幅の90%が最大 */
+    max-height: 80vh;  /* ビューポートの高さの90%が最大 */
+    object-fit: contain; /* 画像がコンテナ内に収まるように縮小（アスペクト比を維持） */
+	display: block;    /* 余計な余白を防ぐ */
+    margin: auto;   
+	padding: 5%;
+}
