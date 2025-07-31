@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
             renderer: 'svg', // svg または canvas
             loop: true,      // ループ再生
             autoplay: true,  // 自動再生
-            path: 'json/data.json' // Honoka Maekawa タイトルアニメーションのJSONファイルパス
+            path: '../json/data.json' // Honoka Maekawa タイトルアニメーションのJSONファイルパス
         });
-        console.log('Main title Lottie (json/data.json) loaded and playing.');
+        console.log('Main title Lottie (../json/data.json) loaded and playing.');
     } else {
         console.warn('Main title Lottie container (#honokamaekawa) not found.');
     }
@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             renderer: 'svg', // svg または canvas
             loop: true,      // ループ再生
             autoplay: true,  // 自動再生
-            path: 'json/scroll_back.json' // サイドバーのLottie JSONファイルパス
+            path: '../json/scroll_back.json' // サイドバーのLottie JSONファイルパス
         });
-        console.log('Sidebar Lottie (json/scroll_back.json) loaded and playing.');
+        console.log('Sidebar Lottie (../json/scroll_back.json) loaded and playing.');
     } else {
         console.warn('Sidebar Lottie container (#scroll_down) not found.');
     }
