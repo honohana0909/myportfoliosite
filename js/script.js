@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lottieアニメーションをロードするコンテナ要素を取得
     const honokamaekawaLottieContainer = document.getElementById('honokamaekawa');
     const sidebarLottieContainer = document.getElementById('scroll_down');
-	const flowerLottieContainer = document.getElementsById('flower');
+	const flowerLottieContainer = document.getElementsByClassName('flower');
 
     let currentSidebarLottieInstance = null; // サイドバーのLottieインスタンスを保持
 
