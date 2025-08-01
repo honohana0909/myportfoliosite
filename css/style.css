@@ -119,7 +119,9 @@ header {
 
 .sidebar-nav .nav-header {
     text-align: center;
-    padding: 10px 0 20px;
+    padding-top: 10px;
+    padding-right: 0;
+    padding-left: 0;
     font-size: 1.0em;
     font-weight: bolder;
     color: #fff; /* 文字色を白に統一 */
@@ -337,4 +339,13 @@ footer {
     background-color: #555555;
     color: #F9F6E8;
     float: none;
+}
+.flower {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 20%;
+    margin-bottom: 0px;
+    clear: none;
+    width: 60%;
+    height: 60%;
 }
