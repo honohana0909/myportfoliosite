@@ -220,9 +220,10 @@ footer {
 #scroll_down {
     width: 50px;
     padding-right: auto;
-    padding-left: 40px;
+    padding-left: 50px;
     position: fixed;
     bottom: 0px;
+    padding-bottom: 20px;
 }
 #honokamaekawa {
     height: 400px;
@@ -307,7 +308,7 @@ footer {
 
 .work-title {
     font-size: 0.8em;
-    font-weight: bold;
+    font-weight: 400;
     color: var(--text-dark-gray);
     margin-bottom: 10px;
     border-top: thin solid #555555;
@@ -515,4 +516,8 @@ footer {
 a {
     text-decoration: none;
     color: inherit; /* 親要素から文字色を引き継ぐ */
+}
+.txt.large {
+    font-size: x-large;
+    font-weight: 400;
 }
