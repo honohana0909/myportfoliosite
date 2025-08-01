@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'about_me': LOTTIE_PATH_BACK,           // About meセクション以降は back.json
         'skill': LOTTIE_PATH_BACK,
         'works': LOTTIE_PATH_BACK,
-        'contact_info': LOTTIE_PATH_BACK
+        'contact_info': LOTTIE_PATH_BACK,
+		'Important': LOTTIE_PATH_BACK,
+		'Vision': LOTTIE_PATH_BACK
     };
 
     // Lottieアニメーションをロード・切り替える関数 (サイドバー用)
@@ -103,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // メインコンテンツの各セクション要素を取得
     // HTMLで定義されているIDに合わせています
-    const mainSections = document.querySelectorAll('#about_me, #skill, #works, #contact_info, header#top');
+    const mainSections = document.querySelectorAll('#about_me, #skill, #works, #contact_info, #Important, #Vision, header#top');
 
     // Intersection Observer のインスタンスを作成
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -130,5 +132,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // 各セクションを監視対象に追加
     mainSections.forEach(section => {
         sectionObserver.observe(section);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const customCursor = document.querySelector('.custom-cursor');
+    
+    // マウスの動きに合わせてカーソルを移動させる
+    document.addEventListener('mousemove', (e) => {
+        customCursor.style.left = `${e.clientX}px`;
+        customCursor.style.top = `${e.clientY}px`;
+    });
+
+    // ホバー対象の要素を取得 (例: すべてのaタグ)
+    const hoverElements = document.querySelectorAll('a, button');
+
+    hoverElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            customCursor.classList.add('hover');
+        });
+        element.addEventListener('mouseleave', () => {
+            customCursor.classList.remove('hover');
+        });
     });
 });
