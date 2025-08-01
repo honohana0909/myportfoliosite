@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lottieアニメーションをロードするコンテナ要素を取得
     const honokamaekawaLottieContainer = document.getElementById('honokamaekawa');
     const sidebarLottieContainer = document.getElementById('scroll_down');
-	const flowerLottieContainer = document.querySelector('.flower');
+	const flowerLottieContainers = document.querySelectorAll('.flower');
 
     let currentSidebarLottieInstance = null; // サイドバーのLottieインスタンスを保持
 
@@ -74,15 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 	
     // 2. flower.json アニメーションをロード
-    if (flowerLottieContainer) {
-        lottie.loadAnimation({
-            container: flowerLottieContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: LOTTIE_PATH_FLOWER
+       if (flowerLottieContainers.length > 0) {
+        flowerLottieContainers.forEach(container => {
+            lottie.loadAnimation({
+                container: container, // ループで回ってきた各要素をcontainerに指定
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: LOTTIE_PATH_FLOWER
+            });
+            console.log('Flower Lottie loaded and playing on a .flower element.');
         });
-        console.log('Flower Lottie loaded and playing.');
     } else {
         console.warn('Flower Lottie container (.flower) not found.');
     }
