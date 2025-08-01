@@ -242,10 +242,12 @@ footer {
 #scroll_down {
     width: 50px;
     padding-right: auto;
-    padding-left: 50px;
     position: fixed;
     bottom: 0px;
     padding-bottom: 20px;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #honokamaekawa {
     height: 400px;
@@ -544,6 +546,8 @@ footer#contact_info {
     position: relative;
     /* 背景画像はここで設定し、下部のテキスト背景にも適用される */
     background-image: url('../sozai/ui/fotter.png');
+	background-color: rgba(255,255,255,0.3);
+	background-blend-mode: lighten;
     background-size: cover;
     background-position: center;
     padding: 50px 20px;
@@ -574,13 +578,6 @@ footer#contact_info {
     color: #555; /* 背景が明るくなったので、文字色を濃い色に */
     opacity: 1; /* 透過をなくしてくっきりと見せる */
 }
-
-/* ナビやメールアドレスのホバー時の色も調整 */
-.footer-content .contact-email a:hover,
-.footer-content .footer-nav a:hover {
-    color: #D1C5B7; /* テーマカラーに合わせた色（例） */
-}
-
 
 .footer-nav {
     display: flex;
