@@ -324,3 +324,71 @@ opacity:0;
     margin: auto;   
 	padding: 5%;
 }
+
+.btn03{
+    /*影の基点とするためrelativeを指定*/
+    width: 20%;
+    height: 15%;
+    position: relative;
+    /*ボタンの形状*/
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background: transparent;
+    border-radius: 25px;
+    border: solid 1px #555;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.2s ease;
+    font-size: small;
+}
+
+/*hoverをした後のボタンの形状*/
+.btn03:hover{
+	border-color:transparent;	
+}
+
+/*ボタンの中のテキスト*/
+.btn03 span {
+    position: relative;
+    z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+    /*テキストの形状*/
+    display: block;
+    padding: 10px 10px;
+    background: #f8f4e6;
+    border-radius: 25px;
+    color: #555;
+    /*アニメーションの指定*/
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/*== 右下に押し込まれる（立体が平面に） */
+
+/*影の設定*/
+.pushright:before {
+    content: "";
+    /*絶対配置で影の位置を決める*/
+    position: absolute;
+	z-index: -1;
+    top: 4px;
+    left: 4px;
+    /*影の形状*/
+    width: 100%;
+    height: 100%;
+	border-radius: 25px;
+    background-color: #555;
+}
+
+/*hoverの際にX・Y軸に4pxずらす*/
+.pushright:hover span {
+	background-color: #555;
+	color: #f8f4e6;
+	transform: translate(4px, 4px);
+}
+.button-area {
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    text-align: right; /* このプロパティで、中のインライン要素を右寄せにします */
+    /* もし必要であれば、ボタンの上の余白などをここで調整 */
+    margin-top: 20px;
+}

@@ -220,7 +220,7 @@ footer {
 #scroll_down {
     width: 50px;
     padding-right: auto;
-    padding-left: 15px;
+    padding-left: 40px;
     position: fixed;
     bottom: 0px;
 }
@@ -231,6 +231,20 @@ footer {
 }
 #splash-logo #flower {
     height: 50%;
+}
+
+#about_txt:hover {
+    transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* 影を濃くする */
+}
+
+#about_txt {
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 300px; /* カードが柔軟にサイズ変更され、最小300pxの幅を保つ */
+    display: flex; /* カード内の要素を縦に並べる */
+    border-radius: 10px;
+    flex-direction: column;
 }
 
 .works-grid {
@@ -379,11 +393,6 @@ footer {
     margin-top: 40px; /* セクションタイトルからの間隔 */
 }
 
-/* 各原則のカードスタイル */
-.principle-card {
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .principle-card:hover {
     transform: translateY(-3px); /* ホバーで少し浮き上がる */
@@ -418,4 +427,92 @@ footer {
     line-height: 1.5;
     color: #555;
     margin: 0; /* デフォルトマージンをリセット */
+}
+
+/* --- Skillセクションのスタイル --- */
+/* .section の共通スタイルはそのまま使われます */
+.skill-container {
+    display: flex; /* 子要素（カード）を横に並べる */
+    flex-wrap: wrap; /* 画面幅に応じて折り返す */
+    justify-content: center; /* カードを中央寄せ */
+    gap: 30px; /* カード間の間隔 */
+}
+
+/* 各スキルカードの共通スタイル */
+.skill-card {
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 300px; /* カードが柔軟にサイズ変更され、最小300pxの幅を保つ */
+    display: flex; /* カード内の要素を縦に並べる */
+    flex-direction: column;
+}
+
+.skill-category-title {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #555;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: thin solid #555555;
+}
+
+/* スキルリストのスタイル */
+.skill-list {
+    list-style-type: none; /* デフォルトのリストマーカーを非表示 */
+    padding-left: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    font-size: 0.6em;
+    color: #555;
+    position: relative;
+    padding-left: 20px; /* カスタムマーカーのスペース */
+}
+
+/* カスタムリストマーカー（例: ドット） */
+.skill-list li::before {
+    content: '・　';
+    position: absolute;
+    left: 0;
+    color: #D1C5B7; /* テーマカラーに合わせた色 */
+    font-weight: bold;
+}
+
+/* --- 取得資格リストのスタイル --- */
+.qualification-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.qualification-item {
+    display: flex; /* 日付と資格名を横に並べる */
+    align-items: flex-start; /* 項目を上揃え */
+    gap: 20px; /* 日付と資格名の間の間隔 */
+}
+
+.qualification-date {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: #555;
+    width: 100px; /* 日付の幅を固定 */
+    flex-shrink: 0; /* 縮小されないようにする */
+    margin: 0;
+}
+
+.qualification-name {
+    font-size: 0.6em;
+    color: #555;
+    flex-grow: 1; /* 残りのスペースを埋める */
+    margin: 0;
+}
+.tag.view :hover{
+    transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* 影を濃くする */
+	color: #555;
+}
+a {
+    text-decoration: none;
+    color: inherit; /* 親要素から文字色を引き継ぐ */
 }
