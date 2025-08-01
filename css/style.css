@@ -12,7 +12,41 @@
     max-width: none;
     border-top-color: #555555;
     border-top-style: solid;
+	font-family: "Zen Kaku Gothic New", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
+.zen-kaku-gothic-new-light {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-regular {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-medium {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-bold {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-black {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
 /* --- 基本的なリセットと全体設定 --- */
 body {
     margin: 0;
@@ -52,7 +86,7 @@ header {
 }
 
 .headmain h3 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin-left: 55px;
     color: #555555;
 }
@@ -156,6 +190,7 @@ h1 {
 h6 {
     border-top: thin solid #555555;
     text-align: right;
+    font-weight: 300;
 }
 
 /* --- フッター --- */
