@@ -395,11 +395,6 @@ footer {
 }
 
 
-.principle-card:hover {
-    transform: translateY(-3px); /* ホバーで少し浮き上がる */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* 影を濃くする */
-}
-
 /* 原則タイトルのスタイル */
 .principle-title {
     font-size: 1em;
