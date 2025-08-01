@@ -211,6 +211,8 @@ footer {
 .txt {
     line-height: normal;
     font-size: medium;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 #about_me div {
     font-size: x-large;
@@ -348,4 +350,72 @@ footer {
     clear: none;
     width: 60%;
     height: 60%;
+}
+.aboutname #name {
+    font-size: x-large;
+    margin-bottom: -20px;
+}
+#himawari {
+    width: 20%;
+    padding-left: 50px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    float: none;
+    padding-top: 30px;
+    height: 20%;
+}
+#setumei {
+    display: flex; /* 子要素を横に並べる */
+    align-items: flex-start; /* 子要素を上揃えにする */
+    /* このコンテナ自体の幅やパディングもここで調整できます */
+    margin: 0 auto; /* 中央配置にしたい場合 */
+}
+
+#important .principles-container {
+    display: flex;
+    flex-direction: column; /* カードを縦に並べる */
+    gap: 25px; /* カード間の間隔 */
+    margin-top: 40px; /* セクションタイトルからの間隔 */
+}
+
+/* 各原則のカードスタイル */
+.principle-card {
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principle-card:hover {
+    transform: translateY(-3px); /* ホバーで少し浮き上がる */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* 影を濃くする */
+}
+
+/* 原則タイトルのスタイル */
+.principle-title {
+    font-size: 1em;
+    font-weight: 400;
+    color: #555;
+    position: relative;
+    padding-bottom: 10px; /* 下線との間隔 */
+    margin-bottom: 15px; /* タイトルと説明文の間隔 */
+}
+
+/* 見出しの下線を模したスタイル */
+.principle-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px; /* 下線の長さ */
+    height: 3px;
+    background-color: #D1C5B7; /* サイトのテーマカラーに合わせた色 */
+    border-radius: 2px;
+}
+
+/* 原則説明文のスタイル */
+.principle-text {
+    font-size: 0.6em;
+    line-height: 1.5;
+    color: #555;
+    margin: 0; /* デフォルトマージンをリセット */
 }
