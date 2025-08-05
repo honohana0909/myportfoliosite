@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Honoka Maekawa Portfolio</title>
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/animetion.css">
@@ -17,15 +18,15 @@
   <div id="splash-logo">
     <div class="flower"></div>
     <p class="TextTyping">HONOKA MAEKAWA</p>
-  </div>
-  <!--/splash--></div>
+  </div></div>  
+
 <div class="splashbg"></div>
 <nav class="sidebar-nav">
   <div class="nav-header"><a href="top.html">
     <div class="flower"></div>
     </a></div>
   <ul>
-    <li><a href="aboutMe.html">About me</a></li>
+    <li><a href="#AboutMe">About me</a></li>
     <li><a href="top.html#works">Works</a></li>
     <li><a href="top.html#skill">Skill</a></li>
     <li><a href="#contact_info">Contact</a></li>
@@ -33,23 +34,55 @@
   <a href="#top">
   <div id="scroll_down"> </div>
   </a> </nav>
+	
+	
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #f8f4e6;">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#top">
+            <div class="flower nav"></div>
+            <span class="nav-brand-text">HONOKA MAEKAWA</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="openbtn"><span></span><span></span><span></span></div>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#AboutMe">About me</a></li>
+                <li class="nav-item"><a class="nav-link" href="top.html#works">Works</a></li>
+                <li class="nav-item"><a class="nav-link" href="top.html#skill">Skill</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact_info">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="main-content-wrapper">
+    </div>
+	
+	
+	
 <div class="main-content-wrapper">
   <main>
     <div class="fadeUp box fadeUpTrigger">
-      <div class="section" id="About">
+      <div class="section" id="AboutMe">
         <p class="section_title">
         <h1><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">About me</span></span></h1>
         <h6><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">わたしについて。</span></span></h6>
         </p>
-        <div id="setumei"> <img src="sozai/ui/ひまわり.jpg" id="himawari">
-          <div class="about-text-container">
-            <div class="aboutname">
-              <p class="txt" id="name">前川暖花</p>
-              <p class="txt" id="alname">HONOKA MAEKAWA</p>
+        <div id="setumei">
+          <div class="row">
+            <div class="col-md-4 mb-4"> <img src="sozai/ui/ひまわり.jpg" id="himawari" alt="" class="img-fluid"> </div>
+            <div class="col-md-8">
+              <div class="aboutname">
+                <p class="txt" id="name">前川暖花</p>
+                <p class="txt" id="alname">HONOKA MAEKAWA</p>
+              </div>
+              <p class="txt" id="about-setumei"> デザインやWebサイト構築、ITにおける経営戦略に興味を持っており、専門的な知識と技能を習得中です。<br>
+                この分野に興味を持った理由は情報化社会がもたらすメリットに魅力を感じると同時にデジタル技術の進歩が全ての人に平等ではないと祖父母から実感したことがきっかけです。それ以来、どんなデザインだったら使用しやすいか、どんな構造であったら管理しやすいかなどの視点を持つことを大切にしてきました。<br>
+              </p>
             </div>
-            <p class="txt" id="about-setumei"> デザインやWebサイト構築、ITにおける経営戦略に興味を持っており、専門的な知識と技能を習得中です。
-              この分野に興味を持った理由は情報化社会がもたらすメリットに魅力を感じると同時にデジタル技術の進歩が全ての人に平等ではないと祖父母から実感したことがきっかけです。それ以来、どんなデザインだったら使用しやすいか、どんな構造であったら管理しやすいかなどの視点を持つことを大切にしてきました。<br>
-            </p>
           </div>
         </div>
       </div>
@@ -91,35 +124,20 @@
         <p class="txt">将来、私はITコンサルタントとして、世の中で抱えられている課題をITの力で解決し、支援することを目指しています。特に、私が大学で学んでいる知識と「なぜ？」を深く追求する探求心、「とりあえずやってみる」という行動力を活かし、クライアントにとって真に価値のあるソリューションを提供できる専門家になりたいと考えています。多様なバックグラウンドを持つ人々と協力、関わりを持ちながら、ITを通じて社会やビジネスにポジティブな変革をもたらすことに貢献したいと考えています。</p>
       </div>
     </div>
-	
   </main>
 </div>
-
 <footer id="contact_info">
-    <div class="footer-content">
-		<div class="check"></div>
-        <div class="contact-section">
-            <h3 class="contact-title">CONTACT</h3>
-            <p class="contact-email">
-				<a href="mailto:your-email@example.com" id="mail" class="btn04 borderleft"><span>BS123023@sun.ac.jp</span></a>
-            </p>
-        </div>
-
-
-        <nav class="footer-nav">
-            
-                <a href="#top" class="btn03 pushright fot"><span># about me</span></a>
-                <a href="top.html#works" class="btn03 pushright fot"><span># works</span></a>
-                <a href="top.html#skill" class="btn03 pushright fot"><span># skill</span></a>
-            
-        </nav>
-        
-      <p class="copyright">
-            &copy; 2025 Honoka Maekawa. All Rights Reserved.
-        </p>
-	  <div class="check"></div>
+  <div class="footer-content">
+    <div class="check"></div>
+    <div class="contact-section">
+      <h1>Contact</h1>
+      <p class="contact-email"> <a href="mailto:your-email@example.com" id="mail" class="btn04 borderleft"><span>BS123023@sun.ac.jp</span></a> </p>
+    </div>
+    <nav class="footer-nav"> <a href="#top" class="btn03 pushright fot"><span># about me</span></a> <a href="top.html#works" class="btn03 pushright fot"><span># works</span></a> <a href="top.html#skill" class="btn03 pushright fot"><span># skill</span></a> </nav>
+    <p class="copyright"> &copy; 2025 Honoka Maekawa. All Rights Reserved. </p>
+    <div class="check"></div>
   </div>
-	</footer>
+</footer>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script> 
 <script src="js/load.js"></script> 
@@ -128,8 +146,14 @@
 <script src="js/fedUp.js"></script> 
 <script src="js/modal.js"></script> 
 <script src="js/lottie.js" type="text/javascript" charset="utf-8"></script> 
-<script src="js/script.js"></script>
+<script src="js/script.js"></script> 
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-3.4.1.min.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/popper.min.js"></script> 
+<script src="js/bootstrap-4.4.1.js"></script>
 <div class="custom-cursor"></div>
 </body>
 </html>
