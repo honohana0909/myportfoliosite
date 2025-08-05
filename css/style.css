@@ -1,13 +1,13 @@
 @charset "UTF-8";
 :root {
-  sidebar-width: 15%; /* ナビゲーションの実際の幅に合わせる */
-  main-content-max-width: 960px; /* メインコンテンツの理想的な最大幅 */
-  content-inner-padding: 50px; /* メインコンテンツ内の左右パディング (レイアウト画像参照) */
-  guide-line-color: #E8E0D7; /* ガイドラインの色（淡い線） */
-  text-color-dark: #555; /* 基本の濃い文字色 */
-  text-color-light: #fff; /* 明るい文字色 */
-  section-bg-color: #fff; /* 各セクションの背景色 */
-  shadow-color: rgba(0, 0, 0, 0.1); /* 影の色 */
+  sidebar-width: 15%;
+  main-content-max-width: 960px;
+  content-inner-padding: 50px; 
+  guide-line-color: #E8E0D7; 
+  text-color-dark: #555; 
+  text-color-light: #fff;
+  section-bg-color: #fff; 
+  shadow-color: rgba(0, 0, 0, 0.1);
   max-width: none;
   border-top-color: #555555;
   border-top-style: solid;
@@ -16,7 +16,6 @@
   font-style: normal;
   margin-right: 0px;
 }
-
 body, html ,a ,button{
     cursor: none;
 }
@@ -25,30 +24,31 @@ a {
     text-decoration: none;
 }
 
-/* ★★★ aタグにマウスカーソルが乗った時も下線を消す ★★★ */
 a:hover {
     text-decoration: none;
 	color: inherit;
 }
 
+/* カーソル */
 .custom-cursor {
-  position: fixed; /* 常にビューポート内の同じ位置に固定 */
+  position: fixed;
   left: 0;
   top: 0;
   width: 18px;
   height: 18px;
-  background-color: #888; /* デフォルトはグレーの丸 */
-  border-radius: 50%; /* 完全な円形 */
-  pointer-events: none; /* カーソル自体がクリックを邪魔しないようにする */
-  transform: translate(-50%, -50%); /* マウスの位置を中央にする */
-  transition: background-color 0.2s ease, transform 0.2s ease; /* ホバー時のアニメーション */
-  z-index: 9999; /* 他の要素の上に表示 */
+  background-color: #888; 
+  border-radius: 50%; 
+  pointer-events: none; 
+  transform: translate(-50%, -50%); 
+  transition: background-color 0.2s ease, transform 0.2s ease; 
+  z-index: 9999; 
 }
-/* リンクやボタンにホバーした時のスタイル */
 .custom-cursor.hover {
-  background-color: rgba(139, 179, 199, 0.7); /* 青い丸に変化 */
-  transform: translate(-50%, -50%) scale(1.8); /* 少し大きくして視覚的な効果を追加 */
+  background-color: rgba(139, 179, 199, 0.7); 
+  transform: translate(-50%, -50%) scale(1.8); 
 }
+
+/* フォント */
 .zen-kaku-gothic-new-light {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 300;
@@ -74,40 +74,40 @@ a:hover {
   font-weight: 900;
   font-style: normal;
 }
-/* --- 基本的なリセットと全体設定 --- */
+
+/* --- 全体のCSS --- */
 body {
   margin: 0;
-  padding: 0; /* paddingをリセット */
-  color: #555; /* デフォルトの文字色 */
-  background-color: #f8f4e6; /* ページ全体の背景色 */
+  padding: 0; 
+  color: #555; 
+  background-color: #f8f4e6; 
   background-repeat: repeat;
   background-size: 100% 100%;
 }
+
 /* --- ヘッダーセクション --- */
 header {
   max-width: var;
-  height: 600px; /* 高さを指定 */
-  /* background-image: url(../sozai/ui/header.png); /* 画像パス確認 */
-  background-repeat: no-repeat; /* 変更: 繰り返しなし */
-  background-size: cover; /* 変更: 要素全体をカバーするように拡大縮小 */
-  background-position: center center; /* 変更: 画像を中央に配置 */
-  /* ナビゲーションの幅の分だけ左にずらす */
-  margin-left: 15%; /* sidebar-navの幅に合わせる */
-  display: flex; /* コンテンツを中央寄せするため */
-  align-items: center; /* 垂直方向中央寄せ */
-  justify-content: center; /* 水平方向中央寄せ */
-  box-sizing: border-box; /* paddingを幅に含める */
-  padding: 20px; /* 全体の内側の余白 */
-  position: relative; /* z-indexのため */
-  z-index: 1; /* ナビゲーションより奥に表示 */
+  height: 600px; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center center; 
+  margin-left: 15%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  box-sizing: border-box; 
+  padding: 20px; 
+  position: relative; 
+  z-index: 1; 
 }
 .headmain {
-  text-align: left; /* 子要素のテキストやインライン要素を中央寄せ */
-  max-width: 960px; /* コンテンツの最大幅を制限 */
+  text-align: left; 
+  max-width: 960px; 
   margin-top: 0;
   margin-right: auto;
-  margin-bottom: 0; /* 中央寄せ */
-  color: #fff; /* ヘッダー内の文字色を白に（背景画像の色による） */
+  margin-bottom: 0; 
+  color: #fff;
 }
 .headmain h3 {
     font-size: 3em;
@@ -115,13 +115,13 @@ header {
     line-height: 1em;
 }
 #honokamaekawa {
-    /* Lottie-playerの親要素のスタイル調整 */
     display: flex;
-    justify-content: center; /* Lottieを中央揃え */
-    align-items: center; /* Lottieのサイズはlottie-playerタグのstyle属性で指定済み */
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: auto;
 }
+
 /* --- 左固定ナビゲーションバー --- */
 .sidebar-nav {
   position: fixed;
@@ -129,15 +129,15 @@ header {
   top: 0;
   width: 15%;
   height: 100%;
-  background-color: rgba(51, 51, 51, 0.2); /* 黒に近い色で透明度20% */
+  background-color: rgba(51, 51, 51, 0.2); 
   color: white;
   padding: 20px 0;
   box-sizing: border-box;
   overflow-y: auto;
-  z-index: 1000; /* 最前面に表示 */
+  z-index: 1000; 
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px); /* 背景のコンテンツをぼかす */
-  -webkit-backdrop-filter: blur(5px); /* Safari対応 */
+  backdrop-filter: blur(5px); 
+  -webkit-backdrop-filter: blur(5px); 
 }
 .sidebar-nav .nav-header {
   text-align: center;
@@ -146,7 +146,7 @@ header {
   padding-left: 0;
   font-size: 1.0em;
   font-weight: bolder;
-  color: #fff; /* 文字色を白に統一 */
+  color: #fff;
 }
 .sidebar-nav ul {
   list-style: none;
@@ -163,26 +163,18 @@ header {
   transition: background-color 0.3s ease;
 }
 .sidebar-nav ul li a:hover {
-  background-color: rgba(87, 87, 87, 0.4); /* ホバー時の背景色も透過させる */
+  background-color: rgba(87, 87, 87, 0.4);
 }
-/* nav-footerはHTMLにないので一旦コメントアウト */
-/* .sidebar-nav .nav-footer {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 0.7em;
-    color: #bbb;
-} */
-/* --- メインコンテンツ領域 --- */
+
+/* --- メインコンテンツ --- */
 main {
-  margin-left: 15%; /* ナビゲーションの幅と同じ余白 */
-  padding: 20px; /* メインコンテンツの内側の余白 */
-  box-sizing: border-box; /* paddingを幅に含める */
-  max-width: auto; /* メインコンテンツの最大幅を制限 */
-  margin-right: 0px; /* 左マージンが指定されているので右をautoにして中央寄せの補助 */
-  margin-top: 0; /* bodyのpaddingがないので不要 */
-  margin-bottom: 0; /* bodyのpaddingがないので不要 */
+  margin-left: 15%; 
+  padding: 20px; 
+  box-sizing: border-box; 
+  max-width: auto; 
+  margin-right: 0px; 
+  margin-top: 0; 
+  margin-bottom: 0;
   position: relative;
   z-index: 1;
 }
@@ -211,13 +203,14 @@ h6 {
   font-weight: 300;
   margin-top: 30px;
 }
+
 /* --- フッター --- */
 footer {
   text-align: center;
   padding: 20px;
   color: ＃555555;
-  margin-left: 15%; /* ナビゲーションの幅の分ずらす */
-  box-sizing: border-box; /* paddingを幅に含める */
+  margin-left: 15%; 
+  box-sizing: border-box; 
   background-image: url(../sozai/ui/fotter.png);
 }
 #top img {
@@ -251,37 +244,31 @@ footer {
   height: 50%;
 }
 #about_txt:hover {
-  transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影を濃くする */
+  transform: translateY(-5px); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
 }
 #about_txt {
   padding: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 1 1 300px; /* カードが柔軟にサイズ変更され、最小300pxの幅を保つ */
-  display: flex; /* カード内の要素を縦に並べる */
+  flex: 1 1 300px; 
+  display: flex; 
   border-radius: 10px;
   flex-direction: column;
 }
-/*
-/*.works-grid {
-/*    display: grid; /* グリッドコンテナにする */
-/*   /* 繰り返し可能な列を定義: 最小300px、最大1fr（利用可能なスペースを均等に） */
-/*    gap: 30px; /* グリッドアイテム間の間隔 */
-/*    margin-top: 40px; /* セクションタイトルとの間隔 */
-/*}*/
+
 .work-item {
-  background-color: var(--section-bg-color); /* 白い背景 */
+  background-color: var(--section-bg-color);
   border-radius: 8px;
-  box-shadow: 0 2px 8px var(--shadow-color); /* やや強い影でカード感を出す */
-  padding: 25px; /* カードの内側の余白 */
-  text-align: center; /* テキストを中央寄せ */
-  text-decoration: none; /* リンクの下線を消す */
-  color: var(--text-dark-gray); /* 文字色 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
-  display: flex; /* 内部の要素（アイコン、タイトル、説明）を縦に並べる */
+  box-shadow: 0 2px 8px var(--shadow-color);
+  padding: 25px; 
+  text-align: center; 
+  text-decoration: none;
+  color: var(--text-dark-gray);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  display: flex;
   flex-direction: column;
-  align-items: center; /* 最小高さを設定し、均等感を出す */
-  justify-content: space-between; /* 要素を上下に配置 */
+  align-items: center; 
+  justify-content: space-between; 
   height: 580px;
   margin-left: 5px;
   margin-right: 5px;
@@ -289,19 +276,19 @@ footer {
   margin-top: 5px;
 }
 .work-item:hover {
-  transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影を濃くする */
+  transform: translateY(-5px); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .work-thumbnail-placeholder {
-  width: 230px; /* アイコンのコンテナサイズ */
+  width: 230px; 
   height: 230px;
-  background-color: #F0EADB; /* 背景のベージュと合わせた色 */
-  border-radius: 50%; /* 円形にする場合 */
-  margin-bottom: 20px; /* アイコンとタイトルの間隔 */
-  display: flex; /* アイコン画像を中央に配置 */
+  background-color: #F0EADB; 
+  border-radius: 50%; 
+  margin-bottom: 20px; 
+  display: flex; 
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* 画像がはみ出さないように */
+  overflow: hidden; 
 }
 .work-thumbnail-placeholder.Tshirt img {
   max-width: 80%;
@@ -315,9 +302,9 @@ footer {
   max-width: 65%;
 }
 .work-thumbnail-placeholder img {
-  max-width: 90%; /* アイコン画像のサイズ */
+  max-width: 90%; 
   max-height: 90%;
-  display: block; /* 余白をなくす */
+  display: block; 
 }
 .work-title {
   font-size: 0.75em;
@@ -356,7 +343,7 @@ footer {
   font-size: 0.5em;
   color: #777;
   margin-bottom: 15px;
-  flex-grow: 1; /* 説明文が複数行になってもレイアウトが崩れにくいように */
+  flex-grow: 1; 
 }
 .date {
   margin-left: 0px;
@@ -396,16 +383,16 @@ footer {
   display: flex;
 }
 #setumei {
-  display: flex; /* 子要素を横に並べる */
-  align-items: flex-start; /* 子要素を上揃えにする */
-  /* このコンテナ自体の幅やパディングもここで調整できます */
-  margin: 0 auto; /* 中央配置にしたい場合 */
+  display: flex; 
+  align-items: flex-start; 
+ 
+  margin: 0 auto;
 }
 #important .principles-container {
   display: flex;
-  flex-direction: column; /* カードを縦に並べる */
-  gap: 25px; /* カード間の間隔 */
-  margin-top: 40px; /* セクションタイトルからの間隔 */
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px; 
 }
 /* 原則タイトルのスタイル */
 .principle-title {
@@ -413,8 +400,8 @@ footer {
     font-weight: 400;
     color: #555;
     position: relative;
-    padding-bottom: 10px; /* 下線との間隔 */
-    margin-bottom: 15px; /* タイトルと説明文の間隔 */
+    padding-bottom: 10px; 
+    margin-bottom: 15px;
     margin-top: 15px;
 }
 /* 見出しの下線を模したスタイル */
@@ -423,9 +410,9 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 60px; /* 下線の長さ */
+  width: 60px;
   height: 3px;
-  background-color: #D1C5B7; /* サイトのテーマカラーに合わせた色 */
+  background-color: #D1C5B7; 
   border-radius: 2px;
 }
 /* 原則説明文のスタイル */
@@ -436,22 +423,21 @@ footer {
     margin-top: 5px;
     margin-right: 0;
     margin-left: 0;
-    margin-bottom: 0; /* デフォルトマージンをリセット */
+    margin-bottom: 0;
 }
 /* --- Skillセクションのスタイル --- */
-/* .section の共通スタイルはそのまま使われます */
 .skill-container {
-  display: flex; /* 子要素（カード）を横に並べる */
-  flex-wrap: wrap; /* 画面幅に応じて折り返す */
-  justify-content: center; /* カードを中央寄せ */
-  gap: 30px; /* カード間の間隔 */
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
 }
 /* 各スキルカードの共通スタイル */
 .skill-card {
   padding: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 1 1 300px; /* カードが柔軟にサイズ変更され、最小300pxの幅を保つ */
-  display: flex; /* カード内の要素を縦に並べる */
+  flex: 1 1 300px; 
+  display: flex; 
   flex-direction: column;
 }
 .skill-category-title {
@@ -465,7 +451,7 @@ footer {
 }
 /* スキルリストのスタイル */
 .skill-list {
-  list-style-type: none; /* デフォルトのリストマーカーを非表示 */
+  list-style-type: none;
   padding-left: 0;
   margin: 0;
 }
@@ -473,9 +459,9 @@ footer {
   font-size: 0.6em;
   color: #555;
   position: relative;
-  padding-left: 20px; /* カスタムマーカーのスペース */
+  padding-left: 20px; 
 }
-/* カスタムリストマーカー（例: ドット） */
+/* カスタムリストマーカー*/
 .skill-list li::before {
   content: '・　';
   position: absolute;
@@ -488,42 +474,40 @@ footer {
   flex-direction: column;
 }
 .qualification-item {
-  display: flex; /* 日付と資格名を横に並べる */
-  align-items: flex-start; /* 項目を上揃え */
-  gap: 20px; /* 日付と資格名の間の間隔 */
+  display: flex;
+  align-items: flex-start; 
+  gap: 20px; 
 }
 .qualification-date {
   font-size: 0.9em;
   font-weight: 300;
   color: #555;
-  width: 150px; /* 日付の幅を固定 */
-  flex-shrink: 0; /* 縮小されないようにする */
+  width: 150px;
+  flex-shrink: 0; 
   margin: 0;
 }
 .qualification-name {
   font-size: 0.6em;
   color: #555;
-  flex-grow: 1; /* 残りのスペースを埋める */
+  flex-grow: 1; 
   margin: 0;
 }
 .tag.view :hover {
-  transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影を濃くする */
+  transform: translateY(-5px); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
   color: #555;
 }
 a {
   text-decoration: none;
-  color: inherit; /* 親要素から文字色を引き継ぐ */
+  color: inherit; 
 }
 .txt.large {
   font-size: x-large;
   font-weight: 400;
 }
 /* --- フッターセクション --- */
-/* --- フッターセクション --- */
 footer#contact_info {
   position: relative;
-  /* 背景画像はここで設定し、下部のテキスト背景にも適用される */
   background-image: url('../sozai/ui/fotter.png');
   background-color: rgba(255, 255, 255, 0.3);
   background-blend-mode: lighten;
@@ -532,24 +516,18 @@ footer#contact_info {
   padding: 50px 20px;
   text-align: center;
 }
-/* ★★★ ここに新しいCSSを追加 ★★★ */
 .footer-content {
-  /* 半透明の背景で文字を見えやすくする */
-  background-color: rgba(240, 234, 219, 0.7); /* 白の70%透過 */
-  /* またはサイトのテーマカラーに合わせて */
-  /* background-color: rgba(248, 244, 237, 0.9); /* 淡いベージュで90%透過 */
-  padding: 30px 40px; /* 内側の余白 */
+  background-color: rgba(240, 234, 219, 0.7); 
+  padding: 30px 40px; 
   border-radius: 8px;
-  max-width: 960px; /* メインコンテンツと同じ最大幅 */
+  max-width: 960px; 
   margin: 0 auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  /* 背景が明るくなるので、文字色を濃い色に戻す */
   color: #555;
 }
-/* フッター内の文字色も、新しい背景に合わせて調整 */
 .footer-content .contact-title, .footer-content .contact-email a, .footer-content .footer-nav a, .footer-content .copyright {
-  color: #555; /* 背景が明るくなったので、文字色を濃い色に */
-  opacity: 1; /* 透過をなくしてくっきりと見せる */
+  color: #555; 
+  opacity: 1; 
 }
 .copyright {
     margin-top: 20px;
@@ -578,15 +556,14 @@ footer#contact_info {
 }
 @media (max-width: 768px) {
   .main-content-wrapper {
-    margin-left: 0; /* ナビバーがないので左マージンを0にリセット */
-    padding-left: 15px; /* 代わりにコンテンツの左側に適切な余白を確保 */
-    padding-right: 15px; /* 右側も同様に余白を確保 */
+    margin-left: 0; 
+    padding-left: 15px; 
+    padding-right: 15px; 
     margin-top: 30px;
   }
 .navbar-brand.d-flex.align-items-center {
     margin-left: -50px;
 }
-  /* main, header, footer も必要に応じてマージンをリセット */
   main, header, footer {
     margin-left: 0;
     margin-right: 0;
@@ -624,23 +601,20 @@ footer#contact_info {
     color: #555555;
   }
   .headmain {
-    text-align: center; /* 子要素のテキストやインライン要素を中央寄せ */
-    max-width: 100%; /* コンテンツの最大幅を制限 */
+    text-align: center; 
+    max-width: 100%; 
     margin-top: 5px;
     margin-right: auto;
-    margin-bottom: 0; /* 中央寄せ */
-    color: #fff; /* ヘッダー内の文字色を白に（背景画像の色による） */
+    margin-bottom: 0; 
+    color: #fff; 
   }
 .flower.nav {
 }
 .footer-nav {
     display: flex;
-    justify-content: center; /* 子要素を水平方向の中央に配置 */
+    justify-content: center; 
     
-    /* ★★★ ここに1行追加します！ ★★★ */
-    flex-direction: column; /* 子要素を縦に並べる */
-
-    /* 縦に並んだときの項目間の間隔を設定 */
+    flex-direction: column; 
     gap: 10px;
 	
 	align-items: center; 
@@ -664,16 +638,9 @@ footer#contact_info {
 	
 	/* フッターのメールアドレスの文字サイズを変更する */
 #mail span {
-    font-size: 0.75em; /* 例: 1.2emに設定 */
-    /* 別のサイズを試す場合は以下を参考にしてください */
-    /* font-size: large; */
-    /* font-size: x-large; */
-    /* font-size: 20px; */
-    /* font-size: 1.5em; */
+    font-size: 0.75em; 
 }
 	.openbtn{
-	/*ボタン内側の基点となるためrelativeを指定。
-追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
 	position: relative;
 	background: rgba(0,0,0,0);
 	cursor: pointer;
@@ -751,9 +718,6 @@ footer#contact_info {
 	 header .row {
         flex-direction: column; /* 要素を縦に並べる */
     }
-
-    /* 画像の列とテキストの列の表示順を入れ替える */
-    /* h3タグの入った列を先に表示させる */
     header .row .col-md-5:first-child {
         order: 2; /* 2番目に表示 */
     }
@@ -763,61 +727,48 @@ footer#contact_info {
 
     /* --- 各要素のサイズと余白の調整 --- */
     .headmain {
-        /* スマホではテキストを中央揃えに */
         text-align: left;
         padding-top: 20px;
         padding-bottom: 20px;
     }
     
     .headmain h3 {
-        /* h3タグのサイズをスマホ用に調整 */
         font-size: 1.8em;
-        margin-left: 0; /* 元の謎のマージンをリセット */
+        margin-left: 0; 
 		margin-top: 60px;
     }
     
     #honokamaekawa {
-        /* Lottieのサイズを調整 */
         height: 200px;
 		margin-bottom: -30px;
 		margin-top: -40px;
     }
 
     #heart{
-        /* 画像の幅をコンテナいっぱいにし、高さを自動調整 */
         width: auto;
         height: 100%;
         padding-left: 0;
-        margin-top: 20px; /* h3タグとの間の余白 */
+        margin-top: 20px; 
     }
 
 .qualification-list {
     display: flex;
     flex-direction: column;
-    /* その他のスタイル */
 }
 
 .qualification-item {
     display: flex;
-    /* ★★★ ここを修正します！ ★★★ */
-    flex-direction: column; /* 子要素を縦に並べる */
-    align-items: flex-start; /* 左揃えにする */
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 5px; 
+    margin-bottom: 15px;
     
-    /* 縦に並んだときの間隔を調整 */
-    gap: 5px; /* 日付と資格名の間の間隔 */
-    margin-bottom: 15px; /* 各アイテムの下の余白 */
-    
-    /* 古いスタイルの調整を削除 */
-    /* gap: 20px; */
-    /* align-items: flex-start; */
-    /* width: 100px; */ /* 日付の幅固定は不要に */
 }
 
 .qualification-date {
     font-size: 0.9em;
     font-weight: 300;
     color: #555;
-    /* width: 100px; は削除 */
     flex-shrink: 0;
     margin: 0;
 }
@@ -834,12 +785,9 @@ footer#contact_info {
 }
 /* --- 768px以上の画面に適用されるスタイル --- */
 @media (min-width: 768px) {
-  /* この中に書かれたスタイルは、画面幅が768px以上の場合に適用されます */
-  /* ナビゲーションバー全体を非表示にする */
   .navbar {
     display: none;
   }
-  /* メインコンテンツの左マージンもリセット（ナビがないので） */
   .main-content-wrapper {
     margin-left: 0;
   }
