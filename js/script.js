@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 各セクションIDと、サイドバーLottieのJSONファイルのパスをマッピング
     const sectionLottieMap = {
         'top': LOTTIE_PATH_SCROLL_BACK,         // Topセクションでは scroll_back.json を表示
+		'AboutMe': LOTTIE_PATH_SCROLL_BACK,  
         'about_me': LOTTIE_PATH_BACK,           // About meセクション以降は back.json
         'skill': LOTTIE_PATH_BACK,
         'works': LOTTIE_PATH_BACK,
@@ -155,4 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
             customCursor.classList.remove('hover');
         });
     });
+});
+
+$(".openbtn").click(function () {
+    $(this).toggleClass('active');
 });

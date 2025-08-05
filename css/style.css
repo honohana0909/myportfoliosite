@@ -1,174 +1,170 @@
 @charset "UTF-8";
-
 :root {
-    sidebar-width: 15%; /* ナビゲーションの実際の幅に合わせる */
-    main-content-max-width: 960px; /* メインコンテンツの理想的な最大幅 */
-    content-inner-padding: 50px; /* メインコンテンツ内の左右パディング (レイアウト画像参照) */
-    guide-line-color: #E8E0D7; /* ガイドラインの色（淡い線） */
-    text-color-dark: #555; /* 基本の濃い文字色 */
-    text-color-light: #fff; /* 明るい文字色 */
-    section-bg-color: #fff; /* 各セクションの背景色 */
-    shadow-color: rgba(0,0,0,0.1); /* 影の色 */
-    max-width: none;
-    border-top-color: #555555;
-    border-top-style: solid;
-	font-family: "Zen Kaku Gothic New", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  sidebar-width: 15%; /* ナビゲーションの実際の幅に合わせる */
+  main-content-max-width: 960px; /* メインコンテンツの理想的な最大幅 */
+  content-inner-padding: 50px; /* メインコンテンツ内の左右パディング (レイアウト画像参照) */
+  guide-line-color: #E8E0D7; /* ガイドラインの色（淡い線） */
+  text-color-dark: #555; /* 基本の濃い文字色 */
+  text-color-light: #fff; /* 明るい文字色 */
+  section-bg-color: #fff; /* 各セクションの背景色 */
+  shadow-color: rgba(0, 0, 0, 0.1); /* 影の色 */
+  max-width: none;
+  border-top-color: #555555;
+  border-top-style: solid;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin-right: 0px;
 }
+/*
 body, html ,a ,button{
     cursor: none;
 }
+*/
+a {
+    text-decoration: none;
+}
+
+/* ★★★ aタグにマウスカーソルが乗った時も下線を消す ★★★ */
+a:hover {
+    text-decoration: none;
+	color: inherit;
+}
 
 .custom-cursor {
-    position: fixed; /* 常にビューポート内の同じ位置に固定 */
-    left: 0;
-    top: 0;
-    width: 18px;
-    height: 18px;
-    background-color: #888; /* デフォルトはグレーの丸 */
-    border-radius: 50%; /* 完全な円形 */
-    pointer-events: none; /* カーソル自体がクリックを邪魔しないようにする */
-    transform: translate(-50%, -50%); /* マウスの位置を中央にする */
-    transition: background-color 0.2s ease, transform 0.2s ease; /* ホバー時のアニメーション */
-    z-index: 9999; /* 他の要素の上に表示 */
+  position: fixed; /* 常にビューポート内の同じ位置に固定 */
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-color: #888; /* デフォルトはグレーの丸 */
+  border-radius: 50%; /* 完全な円形 */
+  pointer-events: none; /* カーソル自体がクリックを邪魔しないようにする */
+  transform: translate(-50%, -50%); /* マウスの位置を中央にする */
+  transition: background-color 0.2s ease, transform 0.2s ease; /* ホバー時のアニメーション */
+  z-index: 9999; /* 他の要素の上に表示 */
 }
 /* リンクやボタンにホバーした時のスタイル */
 .custom-cursor.hover {
-    background-color: rgba(139,179,199,0.7); /* 青い丸に変化 */
-    transform: translate(-50%, -50%) scale(1.8); /* 少し大きくして視覚的な効果を追加 */
+  background-color: rgba(139, 179, 199, 0.7); /* 青い丸に変化 */
+  transform: translate(-50%, -50%) scale(1.8); /* 少し大きくして視覚的な効果を追加 */
 }
 .zen-kaku-gothic-new-light {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
-
 .zen-kaku-gothic-new-regular {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
 .zen-kaku-gothic-new-medium {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
-
 .zen-kaku-gothic-new-bold {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
-
 .zen-kaku-gothic-new-black {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
-
-
 /* --- 基本的なリセットと全体設定 --- */
 body {
-    margin: 0;
-    padding: 0; /* paddingをリセット */
-    color: #555; /* デフォルトの文字色 */
-    background-color: #f8f4e6; /* ページ全体の背景色 */
-    background-repeat: repeat;
-    background-size: 100% 100%;
+  margin: 0;
+  padding: 0; /* paddingをリセット */
+  color: #555; /* デフォルトの文字色 */
+  background-color: #f8f4e6; /* ページ全体の背景色 */
+  background-repeat: repeat;
+  background-size: 100% 100%;
 }
-
 /* --- ヘッダーセクション --- */
 header {
-    max-width: var;
-    height: 600px; /* 高さを指定 */
-   /* background-image: url(../sozai/ui/header.png); /* 画像パス確認 */
-    background-repeat: no-repeat; /* 変更: 繰り返しなし */
-    background-size: cover; /* 変更: 要素全体をカバーするように拡大縮小 */
-    background-position: center center; /* 変更: 画像を中央に配置 */
-    /* ナビゲーションの幅の分だけ左にずらす */
-    margin-left: 15%; /* sidebar-navの幅に合わせる */
-    display: flex; /* コンテンツを中央寄せするため */
-    align-items: center; /* 垂直方向中央寄せ */
-    justify-content: center; /* 水平方向中央寄せ */
-    box-sizing: border-box; /* paddingを幅に含める */
-    padding: 20px; /* 全体の内側の余白 */
-    position: relative; /* z-indexのため */
-    z-index: 1; /* ナビゲーションより奥に表示 */
+  max-width: var;
+  height: 600px; /* 高さを指定 */
+  /* background-image: url(../sozai/ui/header.png); /* 画像パス確認 */
+  background-repeat: no-repeat; /* 変更: 繰り返しなし */
+  background-size: cover; /* 変更: 要素全体をカバーするように拡大縮小 */
+  background-position: center center; /* 変更: 画像を中央に配置 */
+  /* ナビゲーションの幅の分だけ左にずらす */
+  margin-left: 15%; /* sidebar-navの幅に合わせる */
+  display: flex; /* コンテンツを中央寄せするため */
+  align-items: center; /* 垂直方向中央寄せ */
+  justify-content: center; /* 水平方向中央寄せ */
+  box-sizing: border-box; /* paddingを幅に含める */
+  padding: 20px; /* 全体の内側の余白 */
+  position: relative; /* z-indexのため */
+  z-index: 1; /* ナビゲーションより奥に表示 */
 }
-
 .headmain {
-    text-align: left; /* 子要素のテキストやインライン要素を中央寄せ */
-    max-width: 960px; /* コンテンツの最大幅を制限 */
-    margin-top: 0;
-    margin-right: auto;
-    margin-bottom: 0; /* 中央寄せ */
-    color: #fff; /* ヘッダー内の文字色を白に（背景画像の色による） */
+  text-align: left; /* 子要素のテキストやインライン要素を中央寄せ */
+  max-width: 960px; /* コンテンツの最大幅を制限 */
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0; /* 中央寄せ */
+  color: #fff; /* ヘッダー内の文字色を白に（背景画像の色による） */
 }
-
 .headmain h3 {
     font-size: 3em;
-    margin-left: 55px;
     color: #555555;
+    line-height: 1em;
 }
-
 #honokamaekawa {
     /* Lottie-playerの親要素のスタイル調整 */
     display: flex;
     justify-content: center; /* Lottieを中央揃え */
-    align-items: center;
-    margin-top: -50px;    /* Lottieのサイズはlottie-playerタグのstyle属性で指定済み */
+    align-items: center; /* Lottieのサイズはlottie-playerタグのstyle属性で指定済み */
+    width: 100%;
+    height: auto;
 }
-
 /* --- 左固定ナビゲーションバー --- */
 .sidebar-nav {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 15%;
-    height: 100%;
-    background-color: rgba(51, 51, 51, 0.2); /* 黒に近い色で透明度20% */
-    color: white;
-    padding: 20px 0;
-    box-sizing: border-box;
-    overflow-y: auto;
-    z-index: 1000; /* 最前面に表示 */
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    backdrop-filter: blur(5px); /* 背景のコンテンツをぼかす */
-    -webkit-backdrop-filter: blur(5px); /* Safari対応 */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.2); /* 黒に近い色で透明度20% */
+  color: white;
+  padding: 20px 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 1000; /* 最前面に表示 */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px); /* 背景のコンテンツをぼかす */
+  -webkit-backdrop-filter: blur(5px); /* Safari対応 */
 }
-
 .sidebar-nav .nav-header {
-    text-align: center;
-    padding-top: 10px;
-    padding-right: 0;
-    padding-left: 0;
-    font-size: 1.0em;
-    font-weight: bolder;
-    color: #fff; /* 文字色を白に統一 */
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 1.0em;
+  font-weight: bolder;
+  color: #fff; /* 文字色を白に統一 */
 }
-
 .sidebar-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: x-large;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: x-large;
 }
-
 .sidebar-nav ul li a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 0;
-    text-align: center;
-    transition: background-color 0.3s ease;
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
-
 .sidebar-nav ul li a:hover {
-    background-color: rgba(87, 87, 87, 0.4); /* ホバー時の背景色も透過させる */
+  background-color: rgba(87, 87, 87, 0.4); /* ホバー時の背景色も透過させる */
 }
-
 /* nav-footerはHTMLにないので一旦コメントアウト */
 /* .sidebar-nav .nav-footer {
     position: absolute;
@@ -178,247 +174,239 @@ header {
     font-size: 0.7em;
     color: #bbb;
 } */
-
 /* --- メインコンテンツ領域 --- */
 main {
-    margin-left: 15%; /* ナビゲーションの幅と同じ余白 */
-    padding: 20px; /* メインコンテンツの内側の余白 */
-    box-sizing: border-box; /* paddingを幅に含める */
-    max-width: auto; /* メインコンテンツの最大幅を制限 */
-    margin-right: 0px; /* 左マージンが指定されているので右をautoにして中央寄せの補助 */
-    margin-top: 0; /* bodyのpaddingがないので不要 */
-    margin-bottom: 0; /* bodyのpaddingがないので不要 */
-    position: relative;
-    z-index: 1;
+  margin-left: 15%; /* ナビゲーションの幅と同じ余白 */
+  padding: 20px; /* メインコンテンツの内側の余白 */
+  box-sizing: border-box; /* paddingを幅に含める */
+  max-width: auto; /* メインコンテンツの最大幅を制限 */
+  margin-right: 0px; /* 左マージンが指定されているので右をautoにして中央寄せの補助 */
+  margin-top: 0; /* bodyのpaddingがないので不要 */
+  margin-bottom: 0; /* bodyのpaddingがないので不要 */
+  position: relative;
+  z-index: 1;
 }
-
 .section {
-    padding-top: 3px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 1.8em;
-    font-weight: normal;
-    color: #555;
-    text-align: left;
-    min-height: 300px;
-    margin-right: auto;
-    margin-left: auto;
+  padding-top: 3px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.8em;
+  font-weight: normal;
+  color: #555;
+  text-align: left;
+  min-height: 300px;
+  margin-right: auto;
+  margin-left: auto;
 }
 h1 {
-    margin-bottom: -30px;
+  margin-bottom: -30px;
 }
 h6 {
-    border-top: thin solid #555555;
-    text-align: right;
-    font-weight: 300;
+  border-top: thin solid #555555;
+  text-align: right;
+  font-weight: 300;
+  margin-top: 30px;
 }
-
 /* --- フッター --- */
 footer {
-    text-align: center;
-    padding: 20px;
-    color: ＃555555;
-    margin-left: 15%; /* ナビゲーションの幅の分ずらす */
-    box-sizing: border-box; /* paddingを幅に含める */
-    background-image: url(../sozai/ui/fotter.png);
+  text-align: center;
+  padding: 20px;
+  color: ＃555555;
+  margin-left: 15%; /* ナビゲーションの幅の分ずらす */
+  box-sizing: border-box; /* paddingを幅に含める */
+  background-image: url(../sozai/ui/fotter.png);
 }
 #top img {
-    height: 90%;
     float: left;
+    width: 90%;
+    height: auto;
 }
 .txt {
-    line-height: normal;
-    font-size: medium;
-    padding-left: 50px;
-    padding-right: 50px;
+  line-height: normal;
+  font-size: medium;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 #about_me div {
-    font-size: x-large;
+  font-size: x-large;
 }
 #scroll_down {
-    width: 50px;
-    padding-right: auto;
-    position: fixed;
-    bottom: 0px;
-    padding-bottom: 20px;
-    justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
+  width: 50px;
+  padding-right: auto;
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 20px;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
-#honokamaekawa {
-    height: 400px;
-}
+
 .section_title {
 }
 #splash-logo #flower {
-    height: 50%;
+  height: 50%;
 }
-
 #about_txt:hover {
-    transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* 影を濃くする */
+  transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影を濃くする */
 }
-
 #about_txt {
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 300px; /* カードが柔軟にサイズ変更され、最小300pxの幅を保つ */
-    display: flex; /* カード内の要素を縦に並べる */
-    border-radius: 10px;
-    flex-direction: column;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 300px; /* カードが柔軟にサイズ変更され、最小300pxの幅を保つ */
+  display: flex; /* カード内の要素を縦に並べる */
+  border-radius: 10px;
+  flex-direction: column;
 }
-
-.works-grid {
-    display: grid; /* グリッドコンテナにする */
-    /* 繰り返し可能な列を定義: 最小300px、最大1fr（利用可能なスペースを均等に） */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* グリッドアイテム間の間隔 */
-    margin-top: 40px; /* セクションタイトルとの間隔 */
-}
-
+/*
+/*.works-grid {
+/*    display: grid; /* グリッドコンテナにする */
+/*   /* 繰り返し可能な列を定義: 最小300px、最大1fr（利用可能なスペースを均等に） */
+/*    gap: 30px; /* グリッドアイテム間の間隔 */
+/*    margin-top: 40px; /* セクションタイトルとの間隔 */
+/*}*/
 .work-item {
-    background-color: var(--section-bg-color); /* 白い背景 */
-    border-radius: 8px;
-    box-shadow: 0 2px 8px var(--shadow-color); /* やや強い影でカード感を出す */
-    padding: 25px; /* カードの内側の余白 */
-    text-align: center; /* テキストを中央寄せ */
-    text-decoration: none; /* リンクの下線を消す */
-    color: var(--text-dark-gray); /* 文字色 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
-    display: flex; /* 内部の要素（アイコン、タイトル、説明）を縦に並べる */
-    flex-direction: column;
-    align-items: center; /* 内部要素を水平中央寄せ */
-    min-height: 250px; /* 最小高さを設定し、均等感を出す */
-    justify-content: space-between; /* 要素を上下に配置 */
+  background-color: var(--section-bg-color); /* 白い背景 */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow-color); /* やや強い影でカード感を出す */
+  padding: 25px; /* カードの内側の余白 */
+  text-align: center; /* テキストを中央寄せ */
+  text-decoration: none; /* リンクの下線を消す */
+  color: var(--text-dark-gray); /* 文字色 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
+  display: flex; /* 内部の要素（アイコン、タイトル、説明）を縦に並べる */
+  flex-direction: column;
+  align-items: center; /* 最小高さを設定し、均等感を出す */
+  justify-content: space-between; /* 要素を上下に配置 */
+  height: 580px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
-
 .work-item:hover {
-    transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* 影を濃くする */
+  transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影を濃くする */
 }
-
 .work-thumbnail-placeholder {
-    width: 300px; /* アイコンのコンテナサイズ */
-    height: 300px;
-    background-color: #F0EADB; /* 背景のベージュと合わせた色 */
-    border-radius: 50%; /* 円形にする場合 */
-    margin-bottom: 20px; /* アイコンとタイトルの間隔 */
-    display: flex; /* アイコン画像を中央に配置 */
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* 画像がはみ出さないように */
+  width: 230px; /* アイコンのコンテナサイズ */
+  height: 230px;
+  background-color: #F0EADB; /* 背景のベージュと合わせた色 */
+  border-radius: 50%; /* 円形にする場合 */
+  margin-bottom: 20px; /* アイコンとタイトルの間隔 */
+  display: flex; /* アイコン画像を中央に配置 */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 画像がはみ出さないように */
 }
 .work-thumbnail-placeholder.Tshirt img {
-    max-width: 80%;
-    max-height: none;
+  max-width: 80%;
+  max-height: none;
 }
 .work-thumbnail-placeholder.poster img {
-    max-width: 55%;
-    max-height: none;
+  max-width: 55%;
+  max-height: none;
 }
 .work-thumbnail-placeholder.ku img {
-    max-width: 65%;
+  max-width: 65%;
 }
-
 .work-thumbnail-placeholder img {
-    max-width: 90%; /* アイコン画像のサイズ */
-    max-height: 90%;
-    display: block; /* 余白をなくす */
+  max-width: 90%; /* アイコン画像のサイズ */
+  max-height: 90%;
+  display: block; /* 余白をなくす */
 }
-
 .work-title {
-    font-size: 0.8em;
-    font-weight: 400;
-    color: var(--text-dark-gray);
-    margin-bottom: 10px;
-    border-top: thin solid #555555;
-    border-bottom: thin solid #555555;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  font-size: 0.75em;
+  font-weight: 400;
+  color: var(--text-dark-gray);
+  margin-bottom: 10px;
+  border-top: thin solid #555555;
+  border-bottom: thin solid #555555;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+.row .col-xl-4 {}
 .tag {
-    border-width: thin;
-    border-radius: 10px;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    border-style: solid;
-    font-size: 0.4em;
-    height: 1.5em;
-    text-align: center;
-    width: auto;
-    padding-left: 10px;
-    margin-right: 10px;
-    -webkit-box-shadow: 3px 5px #555555;
-    box-shadow: 3px 5px #555555;
-    float: none;
+  border-width: thin;
+  border-radius: 10px;
+  padding-right: 10px;
+  border-style: solid;
+  font-size: 0.4em;
+  height: 1.5em;
+  text-align: center;
+  width: auto;
+  padding-left: 10px;
+  margin-right: 10px;
+  -webkit-box-shadow: 3px 5px #555555;
+  box-shadow: 3px 5px #555555;
+  float: none;
+  padding-bottom: 20px;
+  padding-top: 5px;
 }
 .hushtag {
-    clear: none;
-    float: none;
-    display: block;
+  clear: none;
+  float: none;
+  display: block;
 }
-
 .work-description {
-    font-size: 0.5em;
-    color: #777;
-    margin-bottom: 15px;
-    flex-grow: 1; /* 説明文が複数行になってもレイアウトが崩れにくいように */
+  font-size: 0.5em;
+  color: #777;
+  margin-bottom: 15px;
+  flex-grow: 1; /* 説明文が複数行になってもレイアウトが崩れにくいように */
 }
 .date {
-    margin-left: 0px;
-    float: none;
-    clear: none;
-    font-size: small;
-    margin-bottom: 0px;
+  margin-left: 0px;
+  float: none;
+  clear: none;
+  font-size: small;
+  margin-bottom: 0px;
 }
 .tag.fill {
-    background-color: #555555;
-    color: #F9F6E8;
-    float: none;
+  background-color: #555555;
+  color: #F9F6E8;
+  float: none;
 }
 .flower {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-left: 20%;
-    margin-bottom: 0px;
-    clear: none;
-    width: 60%;
-    height: 60%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 20%;
+  margin-bottom: 0px;
+  clear: none;
+  width: 60%;
+  height: 60%;
 }
 .aboutname #name {
     font-size: x-large;
-    margin-bottom: -20px;
+    margin-bottom: -3px;
 }
 #himawari {
-    width: 20%;
-    padding-left: 50px;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    float: none;
-    padding-top: 30px;
-    height: 20%;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  border-radius: 20px;
+  width: 230px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
 }
 #setumei {
-    display: flex; /* 子要素を横に並べる */
-    align-items: flex-start; /* 子要素を上揃えにする */
-    /* このコンテナ自体の幅やパディングもここで調整できます */
-    margin: 0 auto; /* 中央配置にしたい場合 */
+  display: flex; /* 子要素を横に並べる */
+  align-items: flex-start; /* 子要素を上揃えにする */
+  /* このコンテナ自体の幅やパディングもここで調整できます */
+  margin: 0 auto; /* 中央配置にしたい場合 */
 }
-
 #important .principles-container {
-    display: flex;
-    flex-direction: column; /* カードを縦に並べる */
-    gap: 25px; /* カード間の間隔 */
-    margin-top: 40px; /* セクションタイトルからの間隔 */
+  display: flex;
+  flex-direction: column; /* カードを縦に並べる */
+  gap: 25px; /* カード間の間隔 */
+  margin-top: 40px; /* セクションタイトルからの間隔 */
 }
-
-
 /* 原則タイトルのスタイル */
 .principle-title {
     font-size: 1em;
@@ -427,170 +415,432 @@ footer {
     position: relative;
     padding-bottom: 10px; /* 下線との間隔 */
     margin-bottom: 15px; /* タイトルと説明文の間隔 */
+    margin-top: 15px;
 }
-
 /* 見出しの下線を模したスタイル */
 .principle-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px; /* 下線の長さ */
-    height: 3px;
-    background-color: #D1C5B7; /* サイトのテーマカラーに合わせた色 */
-    border-radius: 2px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px; /* 下線の長さ */
+  height: 3px;
+  background-color: #D1C5B7; /* サイトのテーマカラーに合わせた色 */
+  border-radius: 2px;
 }
-
 /* 原則説明文のスタイル */
 .principle-text {
     font-size: 0.6em;
     line-height: 1.5;
     color: #555;
-    margin: 0; /* デフォルトマージンをリセット */
+    margin-top: 5px;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 0; /* デフォルトマージンをリセット */
 }
-
 /* --- Skillセクションのスタイル --- */
 /* .section の共通スタイルはそのまま使われます */
 .skill-container {
-    display: flex; /* 子要素（カード）を横に並べる */
-    flex-wrap: wrap; /* 画面幅に応じて折り返す */
-    justify-content: center; /* カードを中央寄せ */
-    gap: 30px; /* カード間の間隔 */
+  display: flex; /* 子要素（カード）を横に並べる */
+  flex-wrap: wrap; /* 画面幅に応じて折り返す */
+  justify-content: center; /* カードを中央寄せ */
+  gap: 30px; /* カード間の間隔 */
 }
-
 /* 各スキルカードの共通スタイル */
 .skill-card {
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 300px; /* カードが柔軟にサイズ変更され、最小300pxの幅を保つ */
-    display: flex; /* カード内の要素を縦に並べる */
-    flex-direction: column;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 300px; /* カードが柔軟にサイズ変更され、最小300pxの幅を保つ */
+  display: flex; /* カード内の要素を縦に並べる */
+  flex-direction: column;
 }
-
 .skill-category-title {
-    font-size: 1.2em;
-    font-weight: 400;
-    color: #555;
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    border-bottom: thin solid #555555;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #555;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: thin solid #555555;
 }
-
 /* スキルリストのスタイル */
 .skill-list {
-    list-style-type: none; /* デフォルトのリストマーカーを非表示 */
-    padding-left: 0;
-    margin: 0;
+  list-style-type: none; /* デフォルトのリストマーカーを非表示 */
+  padding-left: 0;
+  margin: 0;
 }
-
 .skill-list li {
-    font-size: 0.6em;
-    color: #555;
-    position: relative;
-    padding-left: 20px; /* カスタムマーカーのスペース */
+  font-size: 0.6em;
+  color: #555;
+  position: relative;
+  padding-left: 20px; /* カスタムマーカーのスペース */
 }
-
 /* カスタムリストマーカー（例: ドット） */
 .skill-list li::before {
-    content: '・　';
-    position: absolute;
-    left: 0;
-    font-weight: bold;
+  content: '・　';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+/* --- 取得資格リストのスタイル --- */
+.qualification-list {
+  display: flex;
+  flex-direction: column;
+}
+.qualification-item {
+  display: flex; /* 日付と資格名を横に並べる */
+  align-items: flex-start; /* 項目を上揃え */
+  gap: 20px; /* 日付と資格名の間の間隔 */
+}
+.qualification-date {
+  font-size: 0.9em;
+  font-weight: 300;
+  color: #555;
+  width: 150px; /* 日付の幅を固定 */
+  flex-shrink: 0; /* 縮小されないようにする */
+  margin: 0;
+}
+.qualification-name {
+  font-size: 0.6em;
+  color: #555;
+  flex-grow: 1; /* 残りのスペースを埋める */
+  margin: 0;
+}
+.tag.view :hover {
+  transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影を濃くする */
+  color: #555;
+}
+a {
+  text-decoration: none;
+  color: inherit; /* 親要素から文字色を引き継ぐ */
+}
+.txt.large {
+  font-size: x-large;
+  font-weight: 400;
+}
+/* --- フッターセクション --- */
+/* --- フッターセクション --- */
+footer#contact_info {
+  position: relative;
+  /* 背景画像はここで設定し、下部のテキスト背景にも適用される */
+  background-image: url('../sozai/ui/fotter.png');
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+/* ★★★ ここに新しいCSSを追加 ★★★ */
+.footer-content {
+  /* 半透明の背景で文字を見えやすくする */
+  background-color: rgba(240, 234, 219, 0.7); /* 白の70%透過 */
+  /* またはサイトのテーマカラーに合わせて */
+  /* background-color: rgba(248, 244, 237, 0.9); /* 淡いベージュで90%透過 */
+  padding: 30px 40px; /* 内側の余白 */
+  border-radius: 8px;
+  max-width: 960px; /* メインコンテンツと同じ最大幅 */
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* 背景が明るくなるので、文字色を濃い色に戻す */
+  color: #555;
+}
+/* フッター内の文字色も、新しい背景に合わせて調整 */
+.footer-content .contact-title, .footer-content .contact-email a, .footer-content .footer-nav a, .footer-content .copyright {
+  color: #555; /* 背景が明るくなったので、文字色を濃い色に */
+  opacity: 1; /* 透過をなくしてくっきりと見せる */
+}
+.copyright {
+    margin-top: 20px;
+}
+.footer-nav {
+  display: flex;
+  justify-content: center;
+}
+.btn03.pushright.fot {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#mail {
+    font-size: xx-large;
+    margin-top: 40px;
+}
+.contact-title {
+  font-weight: 400;
+  font-size: 1.8em;
+}
+.navbar .navbar-expand-lg {
+  displau: none;
+}
+.section-title {
+    padding-top: 20px;
+}
+@media (max-width: 768px) {
+  .main-content-wrapper {
+    margin-left: 0; /* ナビバーがないので左マージンを0にリセット */
+    padding-left: 15px; /* 代わりにコンテンツの左側に適切な余白を確保 */
+    padding-right: 15px; /* 右側も同様に余白を確保 */
+    margin-top: 30px;
+  }
+.navbar-brand.d-flex.align-items-center {
+    margin-left: -50px;
+}
+  /* main, header, footer も必要に応じてマージンをリセット */
+  main, header, footer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .main {
+    margin-left: 0;
+  }
+  .sidebar-nav {
+    display: none;
+  }
+  .main-content-wrapper {
+    margin-left: 0;
+  }
+  .header {
+    margin-top: 80px;
+    margin-left: 0;
+    padding: 5px;
+  }
+  .footer {
+    margin-left: 0;
+  }
+  /* ボタンの幅を調整する */
+  .btn03 {
+    margin-top: 10px;
+  }
+.footer-nav .btn03.pushright.fot {
+    width: 100px;
+}
+  .navbar-brand.d-flex.align-items-center .flower {
+    width: 100px;
+    height: auto;
+    color: #555555;
+  }
+  .nav-brand-text {
+    color: #555555;
+  }
+  .headmain {
+    text-align: center; /* 子要素のテキストやインライン要素を中央寄せ */
+    max-width: 100%; /* コンテンツの最大幅を制限 */
+    margin-top: 5px;
+    margin-right: auto;
+    margin-bottom: 0; /* 中央寄せ */
+    color: #fff; /* ヘッダー内の文字色を白に（背景画像の色による） */
+  }
+.flower.nav {
+}
+.footer-nav {
+    display: flex;
+    justify-content: center; /* 子要素を水平方向の中央に配置 */
+    
+    /* ★★★ ここに1行追加します！ ★★★ */
+    flex-direction: column; /* 子要素を縦に並べる */
+
+    /* 縦に並んだときの項目間の間隔を設定 */
+    gap: 10px;
+	
+	align-items: center; 
+}
+.txt {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.txt.large {
+    font-size: large;
+}
+#about_txt {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#mail {
+    width: 300px;
+}
+.contact-email {
+}
+	
+	/* フッターのメールアドレスの文字サイズを変更する */
+#mail span {
+    font-size: 0.75em; /* 例: 1.2emに設定 */
+    /* 別のサイズを試す場合は以下を参考にしてください */
+    /* font-size: large; */
+    /* font-size: x-large; */
+    /* font-size: 20px; */
+    /* font-size: 1.5em; */
+}
+	.openbtn{
+	/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+	position: relative;
+	background: rgba(0,0,0,0);
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+	border-radius: 5px;
 }
 
-/* --- 取得資格リストのスタイル --- */
+/*ボタン内側*/
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 2px;
+    border-radius: 5px;
+	background: #555;
+  	width: 45%;
+  }
+
+
+.openbtn span:nth-of-type(1) {
+	top:13px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:19px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:25px;
+}
+
+.openbtn span:nth-of-type(3)::after {
+	content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
+	position: absolute;
+	top:5px;
+	left:-2px;
+	color: #555;
+	font-size: 0.6rem;
+	text-transform: uppercase;
+}
+
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+
+.openbtn.active span:nth-of-type(1) {
+    top: 14px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 26px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(3)::after {
+	content:"Close";/*3つ目の要素のafterにClose表示を指定*/
+    transform: translateY(0) rotate(-45deg);
+	top:5px;
+	left:4px;
+}
+.col-sm-12.col-md-6.text-right img {
+}
+#heart {
+    max-width: 300px;
+}
+	 header .row {
+        flex-direction: column; /* 要素を縦に並べる */
+    }
+
+    /* 画像の列とテキストの列の表示順を入れ替える */
+    /* h3タグの入った列を先に表示させる */
+    header .row .col-md-5:first-child {
+        order: 2; /* 2番目に表示 */
+    }
+    header .row .col-md-7:last-child {
+        order: 1; /* 1番目に表示 */
+    }
+
+    /* --- 各要素のサイズと余白の調整 --- */
+    .headmain {
+        /* スマホではテキストを中央揃えに */
+        text-align: left;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .headmain h3 {
+        /* h3タグのサイズをスマホ用に調整 */
+        font-size: 1.8em;
+        margin-left: 0; /* 元の謎のマージンをリセット */
+		margin-top: 60px;
+    }
+    
+    #honokamaekawa {
+        /* Lottieのサイズを調整 */
+        height: 200px;
+		margin-bottom: -30px;
+		margin-top: -40px;
+    }
+
+    #heart{
+        /* 画像の幅をコンテナいっぱいにし、高さを自動調整 */
+        width: auto;
+        height: 100%;
+        padding-left: 0;
+        margin-top: 20px; /* h3タグとの間の余白 */
+    }
+
 .qualification-list {
     display: flex;
     flex-direction: column;
+    /* その他のスタイル */
 }
 
 .qualification-item {
-    display: flex; /* 日付と資格名を横に並べる */
-    align-items: flex-start; /* 項目を上揃え */
-    gap: 20px; /* 日付と資格名の間の間隔 */
+    display: flex;
+    /* ★★★ ここを修正します！ ★★★ */
+    flex-direction: column; /* 子要素を縦に並べる */
+    align-items: flex-start; /* 左揃えにする */
+    
+    /* 縦に並んだときの間隔を調整 */
+    gap: 5px; /* 日付と資格名の間の間隔 */
+    margin-bottom: 15px; /* 各アイテムの下の余白 */
+    
+    /* 古いスタイルの調整を削除 */
+    /* gap: 20px; */
+    /* align-items: flex-start; */
+    /* width: 100px; */ /* 日付の幅固定は不要に */
 }
 
 .qualification-date {
     font-size: 0.9em;
     font-weight: 300;
     color: #555;
-    width: 100px; /* 日付の幅を固定 */
-    flex-shrink: 0; /* 縮小されないようにする */
+    /* width: 100px; は削除 */
+    flex-shrink: 0;
     margin: 0;
 }
 
 .qualification-name {
     font-size: 0.6em;
     color: #555;
-    flex-grow: 1; /* 残りのスペースを埋める */
+    flex-grow: 1;
     margin: 0;
 }
-.tag.view :hover{
-    transform: translateY(-5px); /* マウスホバーで少し浮き上がる */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* 影を濃くする */
-	color: #555;
-}
-a {
-    text-decoration: none;
-    color: inherit; /* 親要素から文字色を引き継ぐ */
-}
-.txt.large {
+.principle-title {
     font-size: x-large;
-    font-weight: 400;
 }
-
-/* --- フッターセクション --- */
-/* --- フッターセクション --- */
-footer#contact_info {
-    position: relative;
-    /* 背景画像はここで設定し、下部のテキスト背景にも適用される */
-    background-image: url('../sozai/ui/fotter.png');
-	background-color: rgba(255,255,255,0.3);
-	background-blend-mode: lighten;
-    background-size: cover;
-    background-position: center;
-    padding: 50px 20px;
-    text-align: center;
 }
-
-/* ★★★ ここに新しいCSSを追加 ★★★ */
-.footer-content {
-    /* 半透明の背景で文字を見えやすくする */
-    background-color: rgba(240, 234, 219, 0.7); /* 白の70%透過 */
-    /* またはサイトのテーマカラーに合わせて */
-    /* background-color: rgba(248, 244, 237, 0.9); /* 淡いベージュで90%透過 */
-    padding: 30px 40px; /* 内側の余白 */
-    border-radius: 8px;
-    max-width: 960px; /* メインコンテンツと同じ最大幅 */
-    margin: 0 auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    
-    /* 背景が明るくなるので、文字色を濃い色に戻す */
-    color: #555;
-}
-
-/* フッター内の文字色も、新しい背景に合わせて調整 */
-.footer-content .contact-title,
-.footer-content .contact-email a,
-.footer-content .footer-nav a,
-.footer-content .copyright {
-    color: #555; /* 背景が明るくなったので、文字色を濃い色に */
-    opacity: 1; /* 透過をなくしてくっきりと見せる */
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: center;
-}
-.btn03.pushright.fot {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-#mail {
-    font-size: xx-large;
-}
-.contact-title {
-    font-weight: 400;
-    font-size: 1.8em;
+/* --- 768px以上の画面に適用されるスタイル --- */
+@media (min-width: 768px) {
+  /* この中に書かれたスタイルは、画面幅が768px以上の場合に適用されます */
+  /* ナビゲーションバー全体を非表示にする */
+  .navbar {
+    display: none;
+  }
+  /* メインコンテンツの左マージンもリセット（ナビがないので） */
+  .main-content-wrapper {
+    margin-left: 0;
+  }
 }
