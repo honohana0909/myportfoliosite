@@ -794,4 +794,7 @@ footer#contact_info {
 }
 
 @media (max-width: 360px){
+.custom-cursor {
+    display: none;
+}
 }
