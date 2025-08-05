@@ -844,3 +844,6 @@ footer#contact_info {
     margin-left: 0;
   }
 }
+
+@media (max-width: 360px){
+}
