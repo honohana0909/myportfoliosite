@@ -112,7 +112,7 @@ header#top {
   color: #fff;
 }
 .headmain h3 {
-    font-size: 3em;
+    font-size: 5vw;
     color: #555555;
     line-height: 1em;
 }
@@ -120,7 +120,7 @@ header#top {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 40vw;
     height: auto;
 }
 
@@ -216,8 +216,8 @@ footer {
   background-image: url(../sozai/ui/fotter.png);
 }
 #top img {
-    float: left;
-    width: 90%;
+	text-align: center;
+    width: 80%;
     height: auto;
 }
 .txt {
@@ -330,7 +330,7 @@ footer {
   width: auto;
   padding-left: 10px;
   margin-right: 10px;
-  -webkit-box-shadow: 3px 5px #555555;
+  webkit-box-shadow: 3px 5px #555555;
   box-shadow: 3px 5px #555555;
   float: none;
   padding-bottom: 20px;
@@ -719,12 +719,15 @@ footer#contact_info {
 }
 #heart {
     max-width: 300px;
+	margin-bottom: 20px;
 }
 	 header .row {
         flex-direction: column; /* 要素を縦に並べる */
+		 
     }
     header .row .col-md-5:first-child {
         order: 2; /* 2番目に表示 */
+		
     }
     header .row .col-md-7:last-child {
         order: 1; /* 1番目に表示 */
@@ -732,7 +735,7 @@ footer#contact_info {
 
     /* --- 各要素のサイズと余白の調整 --- */
     .headmain {
-        text-align: left;
+        text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
     }
@@ -744,20 +747,19 @@ footer#contact_info {
     }
     
     #honokamaekawa {
+		width: 80vw;
         height: 200px;
 		margin-bottom: -30px;
 		margin-top: -40px;
     }
 
     #heart{
-        width: auto;
-        height: 100%;
-        padding-left: 0;
-        margin-top: 20px; 
+    width: auto;
+    height: 100%;
+    margin-bottom: 20px;
     }
 
 .qualification-list {
-    display: flex;
     flex-direction: column;
 }
 
@@ -787,6 +789,12 @@ footer#contact_info {
 .principle-title {
     font-size: x-large;
 }
+	.col-md-5 {
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+}
+	
 }
 /* --- 768px以上の画面に適用されるスタイル --- */
 @media (min-width: 768px) {
