@@ -11,7 +11,7 @@
   max-width: none;
   border-top-color: #555555;
   border-top-style: solid;
-  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-family: "Klee One", cursive;
   font-optical-sizing: auto;
   font-style: normal;
   margin-right: 0px;
@@ -49,6 +49,18 @@ a:hover {
 }
 
 /* フォント */
+.klee-one-regular {
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-kurenaido-regular {
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .zen-kaku-gothic-new-light {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 300;
@@ -83,6 +95,8 @@ body {
   background-color: #f8f4e6; 
   background-repeat: repeat;
   background-size: 100% 100%;
+	
+font-family: "Klee One", cursive;
 }
 
 /* --- ヘッダーセクション --- */
@@ -112,9 +126,10 @@ header#top {
   color: #fff;
 }
 .headmain h3 {
-    font-size: 5vw;
+    font-size: 4vw;
     color: #555555;
     line-height: 1em;
+    font-weight: 600;
 }
 #honokamaekawa {
     display: flex;
@@ -241,6 +256,7 @@ footer {
 }
 
 .section_title {
+    font-weight: 600;
 }
 #splash-logo #flower {
   height: 50%;
