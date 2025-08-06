@@ -806,7 +806,7 @@ footer#contact_info {
   }
 }
 
-@media (max-width: 360px){
+@media (max-width: 400px){
     /* custom-cursor を非表示にする */
     .custom-cursor {
         display: none;
